@@ -1,0 +1,30 @@
+<div class="loading">
+  <div class="loading-text">
+    <span class="loading-text-words">S</span>
+    <span class="loading-text-words">P</span>
+    <span class="loading-text-words">O</span>
+    <span class="loading-text-words">T</span>
+    <span class="loading-text-words">L</span>
+    <span class="loading-text-words">I</span>
+    <span class="loading-text-words">G</span>
+    <span class="loading-text-words">H</span>
+    <span class="loading-text-words">T</span>
+  </div>
+</div>
+<script>
+  //   window.addEventListener("load", function() {
+  //     document.querySelector(".loading").style.opacity = "0";
+  //     setTimeout(() => {
+  //       document.querySelector(".loading").style.display = "none";
+  //     }, 500);
+  //   });
+  window.addEventListener("load", function () {
+    setTimeout(() => {
+      // Wait 1 second before starting the fade-out
+      document.querySelector(".loading").style.opacity = "0";
+      setTimeout(() => {
+        document.querySelector(".loading").style.display = "none";
+      }, 500); // Fade-out duration (0.5s)
+    }, 9000); // 1-second delay before fading out
+  });
+</script>

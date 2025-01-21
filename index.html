@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotlight</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Onest:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+  </head>
+  <body>
+    <!-- Spacer to push content down (so navbar doesn't overlap) -->
+  <div class="navbar-space"></div>
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="atom-shape-svgrepo-com.svg" alt="SpotLight Logo" />
+      <h1>SpotLight  </h1>
+      
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+    <div class="hamburger">
+      <span class="line"></span>
+      <span class="line"></span>
+    </div>
+  </nav>
+
+  <div class="menubar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <h1 style="font-size: 3rem;">testing shit out.....</h1>
+</div>
+
+<!-- loading part start -->
+ <div class="loading">
+  <div class="loading-text">
+    <span class="loading-text-words">S</span>
+    <span class="loading-text-words">P</span>
+    <span class="loading-text-words">O</span>
+    <span class="loading-text-words">T</span>
+    <span class="loading-text-words">L</span>
+    <span class="loading-text-words">I</span>
+    <span class="loading-text-words">G</span>
+    <span class="loading-text-words">H</span>
+    <span class="loading-text-words">T</span>
+  </div>
+</div>
+<script>
+  //   window.addEventListener("load", function() {
+  //     document.querySelector(".loading").style.opacity = "0";
+  //     setTimeout(() => {
+  //       document.querySelector(".loading").style.display = "none";
+  //     }, 500);
+  //   });
+  window.addEventListener("load", function () {
+    setTimeout(() => {
+      // Wait 1 second before starting the fade-out
+      document.querySelector(".loading").style.opacity = "0";
+      setTimeout(() => {
+        document.querySelector(".loading").style.display = "none";
+      }, 500); // Fade-out duration (0.5s)
+    }, 9000); // 1-second delay before fading out
+  });
+</script>
+ <!-- loading part end -->
+
+
+
+
+
+  <script src="main.js"></script>
+
+
+
+ 
+  </body>
+</html>
