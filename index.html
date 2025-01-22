@@ -14,75 +14,76 @@
     <link rel="stylesheet" href="/css/normalize.css" />
   </head>
   <body>
-    <!-- Loading section -->
-     <div class="loading">
-  <div class="loading-text">
-    <span class="loading-text-words">S</span>
-    <span class="loading-text-words">P</span>
-    <span class="loading-text-words">O</span>
-    <span class="loading-text-words">T</span>
-    <span class="loading-text-words">L</span>
-    <span class="loading-text-words">I</span>
-    <span class="loading-text-words">G</span>
-    <span class="loading-text-words">H</span>
-    <span class="loading-text-words">T</span>
-  </div>
-</div>
+    <!-- Loading Component -->
+    <div class="loading">
+      <div class="loading-text">
+        <span class="loading-text-words">S</span>
+        <span class="loading-text-words">P</span>
+        <span class="loading-text-words">O</span>
+        <span class="loading-text-words">T</span>
+        <span class="loading-text-words">L</span>
+        <span class="loading-text-words">I</span>
+        <span class="loading-text-words">G</span>
+        <span class="loading-text-words">H</span>
+        <span class="loading-text-words">T</span>
+      </div>
+    </div>
 
-    <!-- Navbar sectino-->
-     <!-- Spacer to push content down (so navbar doesn't overlap) -->
-<div class="navbar-space"></div>
+    <!-- Navbar Component -->
+    <div class="navbar-space"></div>
+    <nav class="navbar">
+      <div class="logo">
+        <h1>SpotLight</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">How It Works</a></li>
+        <li><a href="#">Use Case</a></li>
+        <li><a href="#" class="btn white-btn">Contact Us</a></li>
+      </ul>
+      <div class="hamburger">
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </nav>
 
-<nav class="navbar">
-  <div class="logo">
-    <!-- <img src="atom-shape-svgrepo-com.svg" alt="SpotLight Logo" /> -->
-    <h1>SpotLight</h1>
-  </div>
-  <ul class="nav-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">How It Works</a></li>
-    <li><a href="#">Use Case</a></li>
-    <li><a href="#">Contact Us</a></li>
-  </ul>
-  <div class="hamburger">
-    <span class="line"></span>
-    <span class="line"></span>
-  </div>
-</nav>
+    <!-- Mobile Menu Component -->
+    <div class="menubar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#" class="btn white-btn">Contact Us</a></li>
+      </ul>
+    </div>
 
-<div class="menubar">
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Services</a></li>
-    <li><a href="#">Blog</a></li>
-    <li><a href="#">Contact Us</a></li>
-  </ul>
-</div>
-
-    <!-- Hero section -->
+    <!-- Hero Section Component -->
     <section class="responsive-section">
       <div class="flex-container">
         <div class="flex-item">
-          <h1>Bring you Prudect alive using AR</h1>
+          <h1>Experience 3D Like Never Before, Bring Objects to Life!</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
-            ultricies felis. Nullam nec purus nec nunc
+            Spotlight lets you turn 3D models into interactive AR experiences.
+            Simply scan, place, and explore objects in your real-world space
+            using your phone
           </p>
           <a href="#" class="btn primary-btn">Primary Button</a>
-
         </div>
-
         <div class="flex-item">
-          <div class="carousel-container">
-            <div class="carousel-card"></div>
-            <div class="carousel-card active"></div>
-            <div class="carousel-card"></div>
-            <div class="carousel-card"></div>
-          </div>
+          <!-- 3D Robot Scene -->
+          <canvas id="canvas3d" ></canvas>
         </div>
       </div>
     </section>
 
     <script src="main.js"></script>
+    <!-- Spline Runtime Script -->
+    <script type="module">
+      import { Application } from "https://unpkg.com/@splinetool/runtime";
+
+      const canvas = document.getElementById("canvas3d");
+      const app = new Application(canvas);
+      app.load("assets/robot.splinecode");
+    </script>
   </body>
 </html>
