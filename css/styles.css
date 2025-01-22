@@ -2,7 +2,10 @@
 *,
 *::before,
 *::after {
+   margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  
 }
 :root {
   /* Default (light mode) */
@@ -138,12 +141,7 @@ p {
 
 /* navabr -----------------------*/
 /* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
+
 
 /* Navbar Spacer (Prevents Overlapping Content) */
 .navbar-space {
@@ -241,6 +239,7 @@ nav .logo img {
 
 /* Mobile Menu (Sliding Down) */
 .menubar {
+  z-index: 999;
   position: fixed;
   top: 4rem; /* One line below navbar */
   left: 0;
@@ -295,3 +294,222 @@ nav .logo img {
 /*  */
 
 /* ----------------------------------- */
+
+/* button section */
+/* button section */
+.btn {
+  margin: 1rem;
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.9em 1.6em;
+  border: none;
+  outline: none;
+  color: #FFF;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 17px;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Primary Button */
+.primary-btn::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000000; /* Pure black */
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.primary-btn::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #FF0000, #002BFF, #FF00C8, #002BFF,
+    #FF0000, #002BFF, #FF00C8, #002BFF
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  filter: blur(8px);
+  animation: glowing 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+  opacity: 0;
+}
+
+.primary-btn:hover::before {
+  opacity: 1;
+}
+
+/* Secondary Button */
+.secondary-btn {
+  background-color: #000000; /* Pure black */
+  color: #FFF;
+}
+
+
+
+.secondary-btn:hover {
+  background-color: #4d4c4c; /* Slightly lighter gray */
+}
+
+/* White Button with Black Text and Border */
+.white-btn {
+  background-color: #FFF;
+  color: #000;
+  border: 2px solid #a5a5a5; /* Initial border color */
+}
+
+.white-btn:hover {
+  border-color: #373737; /* Darker border color on hover */
+}
+
+/* Glowing Animation */
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* ----------------------------------- */
+/* Base style for the section */
+.responsive-section {
+  width: 100%; /* Full width on all devices */
+  max-width: 1200px; /* Limits the width of the content */
+  margin: 0 auto; /* Centers the content horizontally */
+    
+}
+
+/* Flex container style */
+.flex-container {
+  display: flex; /* Enables flexbox */
+  justify-content: space-between; /* Spreads out the items evenly */
+  align-items: center; /* Vertically centers the items */
+  gap: 1rem; /* Adds space between the flex items */
+   
+}
+
+/* Flex item styles */
+.flex-item {
+  background-color: #fff;
+  padding: 3rem;
+  border-radius: 5px;
+  flex: 1; /* Items grow to fill the container equally */
+  
+}
+
+/* Mobile view (full width) */
+@media (max-width: 768px) {
+  .responsive-section {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  /* Adjust flex layout for mobile */
+  .flex-container {
+    flex-direction: column; /* Stacks the items vertically on small screens */
+  }
+}
+
+/* Desktop view (with margins) */
+@media (min-width: 769px) {
+  .responsive-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Keeps the flex layout for desktop */
+  .flex-container {
+    flex-direction: row; /* Align items horizontally on larger screens */
+  }
+}
+/* cardscrolling */
+.carousel-container {
+  position: relative;
+  background: #ffff;
+  max-width: 65rem;
+  min-width: 65rem;
+  height: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 200px;
+  height: 300px;
+  background: purple;
+  margin: 5px;
+  transition: transform 0.5s, background 0.3s ease-in-out;
+}
+
+.carousel-card:nth-child(1) {
+  transform: translate(-170%, -50%);
+}
+.carousel-card:nth-child(2) {
+  transform: translate(-50%, -50%);
+}
+.carousel-card:nth-child(3) {
+  transform: translate(70%, -50%);
+}
+.carousel-card:nth-child(4) {
+  transform: translate(190%, -50%);
+}
+
+.carousel-card.active {
+  background: yellow;
+  transform: translate(-50%, -50%) scale(1.1) !important;
+}
+
+.carousel-next .carousel-card:nth-child(1) {
+  transform: translate(-290%, -50%);
+}
+.carousel-next .carousel-card:nth-child(2) {
+  transform: translate(-170%, -50%);
+}
+.carousel-next .carousel-card:nth-child(3) {
+  transform: translate(-50%, -50%);
+}
+.carousel-next .carousel-card:nth-child(4) {
+  transform: translate(70%, -50%);
+}
+
+.carousel-reset .carousel-card {
+  transition: none;
+}
+.carousel-reset .carousel-card:nth-child(1) {
+  transform: translate(-170%, -50%);
+}
+.carousel-reset .carousel-card:nth-child(2) {
+  transform: translate(-50%, -50%);
+}
+.carousel-reset .carousel-card:nth-child(3) {
+  transform: translate(70%, -50%);
+}
+.carousel-reset .carousel-card:nth-child(4) {
+  transform: translate(190%, -50%);
+}

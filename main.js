@@ -28,5 +28,41 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-// --------------------------------------------- 
+// ---------------------------------------------
+// loadin js
+window.addEventListener("load", function () {
+  setTimeout(() => {
+    // Wait 1 second before starting the fade-out
+    document.querySelector(".loading").style.opacity = "0";
+    setTimeout(() => {
+      document.querySelector(".loading").style.display = "none";
+    }, 500); // Fade-out duration (0.5s)
+  }, 9000); // 1-second delay before fading out
+});
+// -------------------------------
+//  cardscrolling
+const carouselContainer = document.querySelector(".carousel-container");
+const carouselCards = document.querySelectorAll(".carousel-card");
 
+let prevActiveCard = carouselCards[1];
+let nextActiveCard = carouselCards[2];
+
+function scrollCarousel() {
+  carouselContainer.classList.remove("carousel-next", "carousel-reset");
+  carouselContainer.classList.add("carousel-next");
+
+  prevActiveCard.classList.remove("active");
+  nextActiveCard.classList.add("active");
+
+  setTimeout(resetCarousel, 600);
+}
+
+function resetCarousel() {
+  carouselContainer.classList.remove("carousel-next");
+  carouselContainer.classList.add("carousel-reset");
+
+  prevActiveCard.classList.add("active");
+  nextActiveCard.classList.remove("active");
+}
+
+setInterval(scrollCarousel, 1500);

@@ -14,42 +14,8 @@
     <link rel="stylesheet" href="/css/normalize.css" />
   </head>
   <body>
-    <!-- Spacer to push content down (so navbar doesn't overlap) -->
-  <div class="navbar-space"></div>
-
-  <nav class="navbar">
-    <div class="logo">
-      <!-- <img src="atom-shape-svgrepo-com.svg" alt="SpotLight Logo" /> -->
-      <h1>SpotLight  </h1>
-      
-    </div>
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Contact Us</a></li>
-    </ul>
-    <div class="hamburger">
-      <span class="line"></span>
-      <span class="line"></span>
-    </div>
-  </nav>
-
-  <div class="menubar">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Contact Us</a></li>
-    </ul>
-  </div>
-
-  <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-  <h1 style="font-size: 3rem;">testing shit out.....</h1>
-</div>
-
-<!-- loading part start -->
- <div class="loading">
+    <!-- Loading section -->
+     <div class="loading">
   <div class="loading-text">
     <span class="loading-text-words">S</span>
     <span class="loading-text-words">P</span>
@@ -62,33 +28,61 @@
     <span class="loading-text-words">T</span>
   </div>
 </div>
-<script>
-  //   window.addEventListener("load", function() {
-  //     document.querySelector(".loading").style.opacity = "0";
-  //     setTimeout(() => {
-  //       document.querySelector(".loading").style.display = "none";
-  //     }, 500);
-  //   });
-  window.addEventListener("load", function () {
-    setTimeout(() => {
-      // Wait 1 second before starting the fade-out
-      document.querySelector(".loading").style.opacity = "0";
-      setTimeout(() => {
-        document.querySelector(".loading").style.display = "none";
-      }, 500); // Fade-out duration (0.5s)
-    }, 9000); // 1-second delay before fading out
-  });
-</script>
- <!-- loading part end -->
 
+    <!-- Navbar sectino-->
+     <!-- Spacer to push content down (so navbar doesn't overlap) -->
+<div class="navbar-space"></div>
 
+<nav class="navbar">
+  <div class="logo">
+    <!-- <img src="atom-shape-svgrepo-com.svg" alt="SpotLight Logo" /> -->
+    <h1>SpotLight</h1>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">How It Works</a></li>
+    <li><a href="#">Use Case</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+  <div class="hamburger">
+    <span class="line"></span>
+    <span class="line"></span>
+  </div>
+</nav>
 
+<div class="menubar">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+</div>
 
+    <!-- Hero section -->
+    <section class="responsive-section">
+      <div class="flex-container">
+        <div class="flex-item">
+          <h1>Bring you Prudect alive using AR</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
+            ultricies felis. Nullam nec purus nec nunc
+          </p>
+          <a href="#" class="btn primary-btn">Primary Button</a>
 
-  <script src="main.js"></script>
+        </div>
 
+        <div class="flex-item">
+          <div class="carousel-container">
+            <div class="carousel-card"></div>
+            <div class="carousel-card active"></div>
+            <div class="carousel-card"></div>
+            <div class="carousel-card"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-
- 
+    <script src="main.js"></script>
   </body>
 </html>
