@@ -420,15 +420,12 @@ p {
   align-items: center;
   gap: 0.5rem;
 }
-/* .flex-item #canvas3d {
-  font-family: "Onest", sans-serif;
-  font-style: bold;
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 5px;
-  flex: 1;
+.flex-item .robot {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
   
-} */
+}
 
 .flex-item {
   font-family: "Onest", sans-serif;
