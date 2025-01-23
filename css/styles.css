@@ -419,12 +419,7 @@ p {
   justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
-}
-.flex-item .robot {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  
+  align-items: flex-end;
 }
 
 .flex-item {
@@ -433,17 +428,21 @@ p {
   background-color: #fff;
   padding: 1rem;
   border-radius: 5px;
-  flex: 1 2 50%;
+  flex: 1;
 }
 .flex-item h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 .flex-item p {
   font-size: 1.3rem;
   padding-bottom: 1rem;
-  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
   color: var(--accent-text);
   font-weight: 700;
+}
+.flex-item .robot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 768px) {
@@ -455,6 +454,10 @@ p {
 
   .flex-container {
     flex-direction: column;
+  }
+  .flex-item {
+    width: 100%; /* Full width on mobile */
+    flex: none; /* Disable flex sizing */
   }
 }
 
@@ -476,6 +479,11 @@ p {
   .flex-item p {
     font-size: 1.5rem;
   }
+  .flex-item .robot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -493,10 +501,20 @@ p {
 /* ========================
    3D Robot Scene
 ======================== */
+.flex-item.robot {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 750 / 500; /* Explicit ratio declaration */
+  max-width: 750px; /* Matches your natural width */
+  margin: 0 auto; /* Horizontal centering */
+  display: block; /* Ensure proper block behavior */
+  object-fit: contain; /* Prevent distortion */
+}
+
+/* If you need specific positioning for the canvas */
 #canvas3d {
- 
-  
-  
-  
-  
+  width: 100%;
+  max-width: 800px; /* Optional max-width constraint */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 0; /* Space from bottom */
 }
