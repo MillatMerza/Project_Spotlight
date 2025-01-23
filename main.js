@@ -7,7 +7,7 @@ window.addEventListener("load", function () {
     setTimeout(() => {
       document.querySelector(".loading").style.display = "none";
     }, 500); // Fade-out duration (0.5s)
-  }, 4000); // 1-second delay before fading out
+  }, 0); // 1-second delay before fading out
 });
 
 
