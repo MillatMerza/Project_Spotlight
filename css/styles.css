@@ -459,7 +459,6 @@ p {
   .flex-container {
     flex-direction: column;
   }
-  
 }
 
 @media (min-width: 769px) {
@@ -497,7 +496,6 @@ p {
 /* ========================
    3D Robot Scene
 ======================== */
-#canvas3d{
+#canvas3d {
   display: flex;
- 
 }
