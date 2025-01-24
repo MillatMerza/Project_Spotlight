@@ -1,75 +1,88 @@
-// ---------------------------------------------
-// loadin js
-window.addEventListener("load", function () {
+document.addEventListener("DOMContentLoaded", function () {
+  // Delayed Spline Scene Loader (executed after 500ms)
   setTimeout(() => {
-    // Wait 1 second before starting the fade-out
-    document.querySelector(".loading").style.opacity = "0";
+    const canvas = document.getElementById("canvas3d");
+    if (canvas) {
+      import("https://unpkg.com/@splinetool/runtime").then(
+        ({ Application }) => {
+          const app = new Application(canvas);
+          const breakpoints = {
+            mobile: window.matchMedia("(max-width: 767px)"),
+            desktop: window.matchMedia("(min-width: 768px)"),
+          };
+          let currentDevice = breakpoints.mobile.matches ? "mobile" : "desktop";
+
+          function loadScene() {
+            const sceneFile =
+              currentDevice === "mobile"
+                ? "assets/scene (23).splinecode"
+                : "assets/scene (33).splinecode";
+            app
+              .load(sceneFile)
+              .catch((error) => console.error("Error loading scene:", error));
+          }
+
+          loadScene();
+          window.addEventListener("resize", () => {
+            const newDevice = breakpoints.mobile.matches ? "mobile" : "desktop";
+            if (newDevice !== currentDevice) {
+              currentDevice = newDevice;
+              loadScene();
+            }
+          });
+        }
+      );
+    }
+  }, 100); // 500ms delay for Spline loading
+
+  // Dark Mode Toggle (immediately executed)
+  const darkModeToggle = document.querySelector(".theme-checkbox");
+  if (darkModeToggle) {
+    if (localStorage.getItem("darkMode") === "enabled") {
+      document.documentElement.classList.add("dark-mode");
+      darkModeToggle.checked = true;
+    }
+    darkModeToggle.addEventListener("change", function () {
+      document.documentElement.classList.toggle("dark-mode");
+      localStorage.setItem(
+        "darkMode",
+        document.documentElement.classList.contains("dark-mode")
+          ? "enabled"
+          : "disabled"
+      );
+    });
+  }
+
+  // Loading Screen (immediately executed)
+  const loadingScreen = document.querySelector(".loading");
+  if (loadingScreen) {
     setTimeout(() => {
-      document.querySelector(".loading").style.display = "none";
-    }, 500); // Fade-out duration (0.5s)
-  }, 0); // 1-second delay before fading out
-});
+      loadingScreen.style.opacity = "0";
+      setTimeout(() => {
+        loadingScreen.style.display = "none";
+      }, 500);
+    }, 5000);
+  }
 
-
-
-
-
-// navbar code
-document.addEventListener("DOMContentLoaded", () => {
+  // Navbar Toggle (immediately executed)
   const hamburger = document.querySelector(".hamburger");
   const menubar = document.querySelector(".menubar");
-  const menuLinks = menubar.querySelectorAll("a");
-
-  const toggleNav = () => {
-    menubar.classList.toggle("active");
-    hamburger.classList.toggle("hamburger-active");
-  };
-
-  // Toggle menu when clicking the hamburger
-  hamburger.addEventListener("click", toggleNav);
-
-  // Close menu when clicking a link
-  menuLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      menubar.classList.remove("active");
-      hamburger.classList.remove("hamburger-active");
+  if (hamburger && menubar) {
+    const menuLinks = menubar.querySelectorAll("a");
+    const toggleNav = () => {
+      menubar.classList.toggle("active");
+      hamburger.classList.toggle("hamburger-active");
+    };
+    hamburger.addEventListener("click", toggleNav);
+    menuLinks.forEach((link) => link.addEventListener("click", toggleNav));
+    document.addEventListener("click", (event) => {
+      if (
+        !menubar.contains(event.target) &&
+        !hamburger.contains(event.target)
+      ) {
+        menubar.classList.remove("active");
+        hamburger.classList.remove("hamburger-active");
+      }
     });
-  });
-
-  // Close menu when clicking outside
-  document.addEventListener("click", (event) => {
-    if (!menubar.contains(event.target) && !hamburger.contains(event.target)) {
-      menubar.classList.remove("active");
-      hamburger.classList.remove("hamburger-active");
-    }
-  });
+  }
 });
-
-
-// -------------------------------
-// //  cardscrolling
-// const carouselContainer = document.querySelector(".carousel-container");
-// const carouselCards = document.querySelectorAll(".carousel-card");
-
-// let prevActiveCard = carouselCards[1];
-// let nextActiveCard = carouselCards[2];
-
-// function scrollCarousel() {
-//   carouselContainer.classList.remove("carousel-next", "carousel-reset");
-//   carouselContainer.classList.add("carousel-next");
-
-//   prevActiveCard.classList.remove("active");
-//   nextActiveCard.classList.add("active");
-
-//   setTimeout(resetCarousel, 600);
-// }
-
-// function resetCarousel() {
-//   carouselContainer.classList.remove("carousel-next");
-//   carouselContainer.classList.add("carousel-reset");
-
-//   prevActiveCard.classList.add("active");
-//   nextActiveCard.classList.remove("active");
-// }
-
-// setInterval(scrollCarousel, 1500);

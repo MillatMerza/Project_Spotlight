@@ -40,6 +40,13 @@
         <li><a href="#">How It Works</a></li>
         <li><a href="#">Use Case</a></li>
         <li><a href="#" class="btn white-btn">Contact Us</a></li>
+        <li>
+          <input
+            type="checkbox"
+            class="theme-checkbox"
+            onclick="toggleDarkMode()"
+          />
+        </li>
       </ul>
       <div class="hamburger">
         <span class="line"></span>
@@ -54,6 +61,13 @@
         <li><a href="#">Services</a></li>
         <li><a href="#">Blog</a></li>
         <li><a href="#" class="btn white-btn">Contact Us</a></li>
+        <li>
+          <input
+            type="checkbox"
+            class="theme-checkbox"
+            onclick="toggleDarkMode()"
+          />
+        </li>
       </ul>
     </div>
 
@@ -71,40 +85,11 @@
         </div>
         <div class="flex-item robot">
           <!-- 3D Robot Scene -->
-          <canvas id="canvas3d" ></canvas>
+          <canvas id="canvas3d"></canvas>
         </div>
       </div>
     </section>
-
-    <script src="main.js"></script>
-    <!-- Spline Runtime Script -->
-    <script type="module">
-  import { Application } from "https://unpkg.com/@splinetool/runtime";
-
-  const canvas = document.getElementById("canvas3d");
-  const app = new Application(canvas);
-  
-  // Define breakpoints and state tracking
-  const breakpoints = {
-    mobile: window.matchMedia('(max-width: 767px)'),
-    desktop: window.matchMedia('(min-width: 768px)')
-  };
-  
-  // State variables
-  let currentDevice = breakpoints.mobile.matches ? 'mobile' : 'desktop';
-  
-  // Initial load
-  loadScene();
-
-  function loadScene() {
-    const sceneFile = currentDevice === 'mobile' 
-      ? 'assets/scene (23).splinecode' 
-      : 'assets/scene (33).splinecode';
     
-    app.load(sceneFile).catch(error => {
-      console.error('Error loading scene:', error);
-    });
-  }
-</script>
+    <script type="module" src="main.js"></script>
   </body>
 </html>

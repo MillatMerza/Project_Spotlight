@@ -1,0 +1,297 @@
+/* ========================
+   Variables & Theming
+======================== */
+:root {
+  /* Sizes */
+  --navbar-height: 60px;
+  --container-width: 1400px;
+  
+  /* Colors */
+  --primary: #ad1fff;
+  --background-color: rgb(255, 255, 255);
+  --primary-text: rgb(0, 0, 0);
+  --secondary-text: rgb(161, 161, 161);
+  --accent-gray: rgb(43, 43, 43);
+  --accent-text: rgb(102, 102, 102);
+  
+  /* Effects */
+  --navbar-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, 
+                  rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  --button-gradient: linear-gradient(45deg, #b927fc 0%, #2c64fc 100%);
+}
+
+/* ========================
+   Base Styles
+======================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--primary-text);
+  font-family: "Onest", "Plus Jakarta Sans", "Inter", sans-serif;
+  line-height: 1.5;
+}
+
+/* ========================
+   Typography
+======================== */
+h1, h2, h3, h4, h5, h6 { font-family: "Onest", sans-serif; }
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem); /* Responsive clamp */
+  background: var(--button-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  font-weight: 500;
+  color: var(--accent-text);
+}
+
+/* ========================
+   Components
+======================== */
+/* ----- Navbar ----- */
+.navbar {
+  --logo-font-size: 2.3rem;
+  
+  align-items: center;
+  background: var(--background-color);
+  box-shadow: var(--navbar-shadow);
+  display: flex;
+  height: var(--navbar-height);
+  justify-content: space-between;
+  left: 0;
+  padding: 0 5%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  
+  .logo h1 {
+    font-size: var(--logo-font-size);
+    font-weight: 700;
+    margin: 0;
+  }
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  
+  a {
+    color: var(--accent-gray);
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 8px 12px;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    
+    &::after {
+      background: var(--accent-gray);
+      bottom: -5px;
+      content: "";
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      transition: width 0.3s ease, left 0.3s ease;
+      width: 0;
+    }
+    
+    &:hover::after {
+      left: 0;
+      width: 100%;
+    }
+    
+    &.white-btn::after { display: none; }
+  }
+}
+
+/* ----- Buttons ----- */
+.btn {
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin: 1rem;
+  padding: 0.9em 1.6em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  z-index: 0;
+}
+
+.primary-btn {
+  &::before {
+    animation: glowing 40s linear infinite;
+    background: linear-gradient(45deg, 
+      #ff0000, #002bff, #ff00c8, #002bff, 
+      #ff0000, #002bff, #ff00c8, #002bff);
+    background-size: 600%;
+    border-radius: 10px;
+    content: "";
+    filter: blur(8px);
+    height: calc(100% + 4px);
+    left: -2px;
+    position: absolute;
+    top: -2px;
+    width: calc(100% + 4px);
+    z-index: -1;
+  }
+  
+  &::after {
+    background-color: #000;
+    border-radius: 10px;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+  
+  &:hover { transform: perspective(2px) scale(0.95); }
+}
+
+.secondary-btn {
+  background: #000;
+  color: #fff;
+  
+  &:hover { background: #4d4c4c; }
+}
+
+.white-btn {
+  background: #fff;
+  border: 2px solid #a5a5a5;
+  color: #000;
+  
+  &:hover { border-color: #373737; }
+}
+
+/* ----- Responsive Sections ----- */
+.responsive-section {
+  margin: 0 auto;
+  max-width: var(--container-width);
+  width: 100%;
+}
+
+.flex-container {
+  align-items: flex-end;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    
+    .btn { margin-left: 0 !important; }
+  }
+}
+
+.flex-item {
+  background: #fff;
+  border-radius: 5px;
+  flex: 1;
+  padding: 1rem;
+  
+  .robot {
+    aspect-ratio: 750/500;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 750px;
+    width: 100%;
+  }
+}
+
+/* ========================
+   Utilities & Animations
+======================== */
+.loading {
+  align-items: center;
+  background: var(--background-color);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  
+  &-text {
+    font-size: 3rem;
+    gap: 5px;
+    
+    span {
+      animation: blur-text 1.5s infinite linear alternate;
+      color: var(--primary-text);
+      display: inline-block;
+      
+      @for $i from 1 through 9 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{($i - 1) * 0.2s};
+        }
+      }
+    }
+  }
+}
+
+@keyframes blur-text {
+  0% { filter: blur(0); opacity: 1; }
+  100% { filter: blur(5px); opacity: 0.5; }
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+/* ========================
+   Media Queries
+======================== */
+@media (max-width: 790px) {
+  .hamburger { display: block; }
+  .nav-links { display: none; }
+  
+  .menubar {
+    height: 0;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: calc(var(--navbar-height) + 1rem);
+    transition: height 0.5s ease-in-out;
+    width: 100%;
+    
+    &.active { height: 280px; }
+    
+    a {
+      font-size: 1.8rem;
+      padding: 10px 15px;
+    }
+  }
+}
