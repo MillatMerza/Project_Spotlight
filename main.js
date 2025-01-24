@@ -36,21 +36,51 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 100); // 500ms delay for Spline loading
 
   // Dark Mode Toggle (immediately executed)
-  const darkModeToggle = document.querySelector(".theme-checkbox");
-  if (darkModeToggle) {
-    if (localStorage.getItem("darkMode") === "enabled") {
-      document.documentElement.classList.add("dark-mode");
-      darkModeToggle.checked = true;
-    }
-    darkModeToggle.addEventListener("change", function () {
-      document.documentElement.classList.toggle("dark-mode");
-      localStorage.setItem(
-        "darkMode",
-        document.documentElement.classList.contains("dark-mode")
-          ? "enabled"
-          : "disabled"
-      );
+  // const darkModeToggle = document.querySelector(".theme-checkbox");
+  // if (darkModeToggle) {
+  //   if (localStorage.getItem("darkMode") === "enabled") {
+  //     document.documentElement.classList.add("dark-mode");
+  //     darkModeToggle.checked = true;
+  //   }
+  //   darkModeToggle.addEventListener("change", function () {
+  //     document.documentElement.classList.toggle("dark-mode");
+  //     localStorage.setItem(
+  //       "darkMode",
+  //       document.documentElement.classList.contains("dark-mode")
+  //         ? "enabled"
+  //         : "disabled"
+  //     );
+  //   });
+  // }
+  // Dark Mode Toggle
+  const darkModeCheckboxes = document.querySelectorAll(".theme-checkbox");
+  const htmlElement = document.documentElement;
+
+  // Initialize dark mode from localStorage
+  const darkModeState = localStorage.getItem("darkMode");
+  if (darkModeState === "enabled") {
+    htmlElement.classList.add("dark-mode");
+  }
+
+  // Set initial checkbox state and add event listeners
+  darkModeCheckboxes.forEach((checkbox) => {
+    checkbox.checked = darkModeState === "enabled";
+    checkbox.addEventListener("change", handleDarkModeToggle);
+  });
+
+  function handleDarkModeToggle() {
+    const isDarkMode = this.checked;
+
+    // Toggle class on HTML element
+    htmlElement.classList.toggle("dark-mode", isDarkMode);
+
+    // Update all checkboxes
+    darkModeCheckboxes.forEach((checkbox) => {
+      checkbox.checked = isDarkMode;
     });
+
+    // Save state to localStorage
+    localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
   }
 
   // Loading Screen (immediately executed)
