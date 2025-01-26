@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
         loadingScreen.style.display = "none";
       }, 500);
-    }, 5000);
+    }, 1000);
   }
 
   // Navbar Toggle (immediately executed)
@@ -116,3 +116,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// ==============================================
+// Spotlight FAQ Interaction
+document.querySelectorAll(".faq-item").forEach((item) => {
+  item.addEventListener("click", function () {
+    const isActive = this.classList.contains("active");
+
+    // Close all items
+    document.querySelectorAll(".faq-item").forEach((el) => {
+      el.classList.remove("active");
+      el.querySelector(".answer").style.maxHeight = null;
+    });
+
+    // Toggle current if not active
+    if (!isActive) {
+      this.classList.add("active");
+      const answer = this.querySelector(".answer");
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  });
+});
+
+// // Footer Reveal Animation
+// const footer = document.querySelector('.footer');
+// const footerObserver = new IntersectionObserver((entries) => {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       footer.classList.add('reveal');
+//     }
+//   });
+// }, { threshold: 0.1 });
+
+// if (footer) {
+//   footerObserver.observe(footer);
+// }

@@ -7,7 +7,7 @@
   --primary-color: #fff;
   --secondary-color: #000;
   --accent-color: rgb(83, 82, 82);
-  --accent-soft-color: rgb(161, 161, 161);
+  --accent-soft-color: rgb(98, 94, 94);
 }
 
 /* Optional: Manual Dark Mode Toggle */
@@ -137,9 +137,11 @@ p {
 ======================== */
 .navbar-space {
   height: 6rem; /* Same as navbar height */
+  
 }
 
 .navbar {
+  background-color: var(--primary-color);
   position: fixed;
   top: 0;
   left: 0;
@@ -379,8 +381,8 @@ p {
 }
 
 .secondary-btn {
-  background-color: var(--secondery-color);
-  color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .secondary-btn:hover {
@@ -596,3 +598,374 @@ p {
 .theme-checkbox:checked {
   background-position: 100%;
 }
+
+/* ========================
+   How It Works Section
+======================== */
+/* --------------------------------------------------------- */
+.how-it-works {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 3.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+}
+
+.section-header p {
+  font-size: 1.6rem;
+  color: var(--accent-soft-color);
+  max-width: 600px;
+  margin: 0 auto 4rem;
+}
+
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  padding: 2rem;
+}
+
+.step-card {
+  background: var(--primary-color);
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border: 1px solid var(--accent-soft-color);
+}
+
+.step-card:hover {
+  transform: translateY(-10px);
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(to right, #b927fc 0%, #2c64fc 100%);
+  color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: -45px auto 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.step-card h3 {
+  color: var(--secondary-color);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.step-card p {
+  color: var(--accent-soft-color);
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .steps-container {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+  }
+}
+/* ------------------------------------------------------- */
+/* ========================
+   Categories Showcase
+======================== */
+.categories-showcase {
+  padding: 6rem 2rem;
+  background: rgba(var(--secondary-color-rgb), 0.02);
+}
+
+.category-group {
+  margin-bottom: 5rem;
+}
+
+.category-title {
+  font-size: 2.6rem;
+  color: var(--secondary-color);
+  margin-bottom: 3rem;
+  padding-left: 2rem;
+  border-left: 4px solid #b927fc;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  padding: 0 2rem;
+}
+
+.category-card {
+  background: var(--primary-color);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  border: 1px solid var(--accent-soft-color);
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-content {
+  padding: 2rem;
+}
+
+.card-content h4 {
+  color: var(--secondary-color);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.card-content p {
+  color: var(--accent-soft-color);
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Example image classes - replace with actual images */
+.furniture-1 { background-image: url('furniture-1.jpg'); }
+.furniture-2 { background-image: url('furniture-2.jpg'); }
+.furniture-3 { background-image: url('furniture-3.jpg'); }
+
+@media (max-width: 768px) {
+  .category-title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+  }
+  
+  .cards-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+    gap: 2rem;
+  }
+  
+  .card-image {
+    height: 200px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* Image Placeholders - Replace with actual images */
+.furniture-1 { background-image: url('img/furniture1.jpg'); }
+.furniture-2 { background-image: url('img/furniture2.jpg'); }
+.furniture-3 { background-image: url('img/furniture3.jpg'); }
+
+.medical-1 { background-image: url('img/medical1.jpg'); }
+.medical-2 { background-image: url('img/medical2.jpg'); }
+.medical-3 { background-image: url('img/medical3.jpg'); }
+
+.food-1 { background-image: url('img/food1.jpg'); }
+.food-2 { background-image: url('img/food2.jpg'); }
+.food-3 { background-image: url('img/food3.jpg'); }
+
+.clothing-1 { background-image: url('img/clothing1.jpg'); }
+.clothing-2 { background-image: url('img/clothing2.jpg'); }
+.clothing-3 { background-image: url('img/clothing3.jpg'); }
+
+/* Category Color Variations */
+.category-group:nth-child(odd) .category-title {
+  border-color: #b927fc;
+}
+.category-group:nth-child(even) .category-title {
+  border-color: #2c64fc;
+}
+
+.card-image {
+  background-color: var(--accent-soft-color);
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover .card-image {
+  transform: scale(1.03);
+}
+/* ================== */
+/* ========================
+   Spotlight FAQ Section
+======================== */
+#spotlight-faq {
+  padding: 6rem 2rem;
+  background: rgba(var(--secondary-color-rgb), 0.03);
+}
+
+.faq-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.faq-header h2 {
+  font-size: 2.8rem;
+  background: linear-gradient(to right, #b927fc 0%, #2c64fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+}
+
+.subheader {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: var(--accent-soft-color);
+  line-height: 1.6;
+  font-size: 1.4rem;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.faq-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.faq-item {
+  background: var(--primary-color);
+  border: 1px solid var(--accent-soft-color);
+  border-radius: 12px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-item:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.question h3 {
+  color: var(--secondary-color);
+  font-size: 1.6rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.arrow {
+  color: var(--accent-color);
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.answer p {
+  color: var(--accent-soft-color);
+  font-size: 1.4rem;
+  line-height: 1.6;
+  padding-top: 1.5rem;
+  margin: 0;
+}
+
+/* Active States */
+.faq-item.active {
+  border-color: var(--accent-color);
+}
+
+.faq-item.active .arrow {
+  transform: rotate(90deg);
+}
+
+.faq-item.active .answer {
+  max-height: 300px;
+}
+
+@media (max-width: 768px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  #spotlight-faq {
+    padding: 4rem 1rem;
+  }
+  
+  .faq-header h2 {
+    font-size: 2.4rem;
+  }
+  
+  .faq-item {
+    padding: 1.5rem;
+  }
+}
+
+/* ----- */
+
+
+/* ========================
+    Footer  this need to be fixed
+======================== */
+
+.page {
+  background: inherit;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  color: #212121;
+}
+
+.footer {
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  background:var(--secondary-color);
+  position: sticky;
+  bottom: 0;
+  height: 300px;
+  color: var(--primary-color);
+}
+
+.content {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+
+
