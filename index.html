@@ -15,461 +15,452 @@
     <!-- AOS CSS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
-    
+    <!-- this is a return version -->
   </head>
   <body>
     <div class="page">
-    <!-- Loading Component -->
-    <div class="loading">
-      <div class="loading-text">
-        <span class="loading-text-words">S</span>
-        <span class="loading-text-words">P</span>
-        <span class="loading-text-words">O</span>
-        <span class="loading-text-words">T</span>
-        <span class="loading-text-words">L</span>
-        <span class="loading-text-words">I</span>
-        <span class="loading-text-words">G</span>
-        <span class="loading-text-words">H</span>
-        <span class="loading-text-words">T</span>
+      <!-- Loading Component -->
+      <div class="loading">
+        <div class="loading-text">
+          <span class="loading-text-words">S</span>
+          <span class="loading-text-words">P</span>
+          <span class="loading-text-words">O</span>
+          <span class="loading-text-words">T</span>
+          <span class="loading-text-words">L</span>
+          <span class="loading-text-words">I</span>
+          <span class="loading-text-words">G</span>
+          <span class="loading-text-words">H</span>
+          <span class="loading-text-words">T</span>
+        </div>
       </div>
+
+      <!-- Navbar Component -->
+      <div class="navbar-space"></div>
+      <nav class="navbar">
+        <div class="logo">
+          <h1>SpotLight</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">Use Case</a></li>
+          <li><a href="#" class="btn white-btn">Contact Us</a></li>
+          <li>
+            <input type="checkbox" class="theme-checkbox" />
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu Component -->
+      <div class="menubar">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#" class="btn white-btn">Contact Us</a></li>
+          <li>
+            <input type="checkbox" class="theme-checkbox" />
+          </li>
+        </ul>
+      </div>
+
+      <!-- Hero Section Component -->
+      <section class="responsive-section">
+        <div class="flex-container">
+          <div class="flex-item">
+            <h1>Experience 3D Like Never Before, Bring Objects to Life!</h1>
+            <p>
+              Spotlight lets you turn 3D models into interactive AR experiences.
+              Simply scan, place, and explore objects in your real-world space
+              using your phone
+            </p>
+            <a href="#" class="btn primary-btn">Primary Button</a>
+          </div>
+          <div class="flex-item robot">
+            <!-- 3D Robot Scene -->
+            <canvas id="canvas3d"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Add after the Hero section ----------------------------------------------------------->
+      <section class="how-it-works responsive-section" id="how-it-works">
+        <div class="section-header" data-aos="fade-up">
+          <h2>How It Works</h2>
+          <p>
+            Transform your 3D models into immersive AR experiences in three
+            simple steps
+          </p>
+        </div>
+
+        <div class="steps-container">
+          <div class="step-card" data-aos="fade-up">
+            <div class="step-number">1</div>
+            <h3>Upload Your Model</h3>
+            <p>
+              Import your 3D assets directly through our web interface or API.
+              We support all major 3D file formats.
+            </p>
+          </div>
+
+          <div class="step-card" data-aos="fade-up">
+            <div class="step-number">2</div>
+            <h3>Configure Settings</h3>
+            <p>
+              Adjust materials, interactions, and AR placement parameters using
+              our intuitive dashboard.
+            </p>
+          </div>
+
+          <div class="step-card" data-aos="fade-up">
+            <div class="step-number">3</div>
+            <h3>Share & Experience</h3>
+            <p>
+              Generate a shareable link or embed code. Viewers can access the AR
+              experience directly in their browsers.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- sections -->
+      <section class="categories-showcase responsive-section" id="categories">
+        <div class="section-header">
+          <h2>Explore Collections</h2>
+          <p>
+            Discover objects from various categories ready for AR exploration
+          </p>
+        </div>
+
+        <!-- Furniture Collection -->
+        <div class="category-group">
+          <h3 class="category-title">Furniture Collection</h3>
+          <div class="cards-grid">
+            <div class="category-card">
+              <div class="card-image furniture-1"></div>
+              <div class="card-content">
+                <h4>Modern Sofa</h4>
+                <p>
+                  Experience contemporary furniture design in your living space
+                  with realistic material textures.
+                </p>
+                <a href="#" class="btn secondary-btn">View in AR</a>
+              </div>
+            </div>
+            <div class="category-card">
+              <div class="card-image furniture-2"></div>
+              <div class="card-content">
+                <h4>Dining Set</h4>
+                <p>
+                  Test different table configurations and chair arrangements in
+                  your actual dining area.
+                </p>
+                <a href="#" class="btn secondary-btn">View in AR</a>
+              </div>
+            </div>
+            <div class="category-card">
+              <div class="card-image furniture-3"></div>
+              <div class="card-content">
+                <h4>Bookshelf</h4>
+                <p>
+                  Visualize storage solutions with accurate dimension
+                  representation in your space.
+                </p>
+                <a href="#" class="btn secondary-btn">View in AR</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Medical Collection -->
+        <div class="category-group">
+          <h3 class="category-title">Medical Models</h3>
+          <div class="cards-grid">
+            <div class="category-card">
+              <div class="card-image medical-1"></div>
+              <div class="card-content">
+                <h4>Human Anatomy</h4>
+                <p>
+                  Interactive 3D model of human muscular system with layer
+                  control functionality.
+                </p>
+                <a href="#" class="btn secondary-btn">View in AR</a>
+              </div>
+            </div>
+            <div class="category-card">
+              <div class="card-image medical-2"></div>
+              <div class="card-content">
+                <h4>Surgical Tools</h4>
+                <p>
+                  Detailed models of medical instruments for training and
+                  demonstration purposes.
+                </p>
+                <a href="#" class="btn secondary-btn">View in AR</a>
+              </div>
+            </div>
+            <div class="category-card">
+              <div class="card-image medical-3"></div>
+              <div class="card-content">
+                <h4>Organ Models</h4>
+                <p>
+                  Rotatable 3D heart model with cutaway views and blood flow
+                  visualization.
+                </p>
+                <a href="#" class="btn secondary-btn">View in AR</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Food Collection -->
+        <div class="category-group">
+          <h3 class="category-title">Food & Packaging</h3>
+          <div class="cards-grid">
+            <div class="category-card">
+              <div class="card-image food-1"></div>
+              <div class="card-content">
+                <h4>Product Packaging</h4>
+                <p>
+                  View food packaging designs in realistic environments with
+                  scale accuracy.
+                </p>
+                <a href="#" class="btn secondary-btn">View in AR</a>
+              </div>
+            </div>
+            <div class="category-card">
+              <div class="card-image food-2"></div>
+              <div class="card-content">
+                <h4>Restaurant Dishes</h4>
+                <p>
+                  Preview menu items in AR with realistic lighting and texture
+                  mapping.
+                </p>
+                <a href="#" class="btn secondary-btn">View in AR</a>
+              </div>
+            </div>
+            <div class="category-card">
+              <div class="card-image food-3"></div>
+              <div class="card-content">
+                <h4>Nutrition Display</h4>
+                <p>
+                  Interactive food models with nutritional information layers.
+                </p>
+                <a href="#" class="btn secondary-btn">View in AR</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clothing Collection -->
+        <div class="category-group">
+          <h3 class="category-title">Fashion Collection</h3>
+          <div class="cards-grid">
+            <div class="category-card">
+              <div class="card-image clothing-1"></div>
+              <div class="card-content">
+                <h4>Casual Wear</h4>
+                <p>
+                  Virtual try-on for everyday outfits with realistic fabric
+                  simulation.
+                </p>
+                <a href="#" class="btn secondary-btn">View in AR</a>
+              </div>
+            </div>
+            <div class="category-card">
+              <div class="card-image clothing-2"></div>
+              <div class="card-content">
+                <h4>Formal Attire</h4>
+                <p>
+                  View tailored suits and dresses in your environment with
+                  proper drape physics.
+                </p>
+                <a href="#" class="btn secondary-btn">View in AR</a>
+              </div>
+            </div>
+            <div class="category-card">
+              <div class="card-image clothing-3"></div>
+              <div class="card-content">
+                <h4>Accessories</h4>
+                <p>
+                  Try watches, glasses, and jewelry in AR with realistic
+                  reflections.
+                </p>
+                <a href="#" class="btn secondary-btn">View in AR</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Add this section before closing </body> -->
+      <section class="responsive-section" id="spotlight-faq">
+        <div class="faq-header">
+          <h2>Spotlight FAQ</h2>
+          <p class="subheader">
+            Answers to common questions about AR experiences
+          </p>
+          <p class="description">
+            Whether you're new to augmented reality or looking to enhance your
+            current workflow, find everything you need to know about creating
+            and managing AR content with Spotlight.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <!-- Column 1 -->
+          <div class="faq-column">
+            <div class="faq-item">
+              <div class="question">
+                <h3>What devices support AR viewing?</h3>
+                <span class="arrow">→</span>
+              </div>
+              <div class="answer">
+                <p>
+                  Spotlight works on iOS and Android devices with ARCore/ARKit
+                  support. No special apps required - works directly in mobile
+                  browsers.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="question">
+                <h3>How do I upload 3D models?</h3>
+                <span class="arrow">→</span>
+              </div>
+              <div class="answer">
+                <p>
+                  Use our web dashboard or API to upload GLB/GLTF files. We
+                  automatically optimize models for AR viewing.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="faq-column">
+            <div class="faq-item">
+              <div class="question">
+                <h3>Can I try before subscribing?</h3>
+                <span class="arrow">→</span>
+              </div>
+              <div class="answer">
+                <p>
+                  Yes! Start with our free tier offering 5 AR experiences and
+                  basic analytics.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="question">
+                <h3>What about data privacy?</h3>
+                <span class="arrow">→</span>
+              </div>
+              <div class="answer">
+                <p>
+                  All model data is encrypted at rest and in transit. We comply
+                  with GDPR and CCPA regulations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contact-section">
+        <div class="contact-container">
+          <div class="contact-header">
+            <h2>Contact us</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna al ligua. Ut
+              enim
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <!-- Left Column - Form -->
+            <div class="contact-form">
+              <form>
+                <div class="form-row">
+                  <div class="input-group">
+                    <label for="firstName">FIRST NAME</label>
+                    <input type="text" id="firstName" required />
+                  </div>
+                  <div class="input-group">
+                    <label for="lastName">LAST NAME</label>
+                    <input type="text" id="lastName" required />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="input-group">
+                    <label for="email">EMAIL</label>
+                    <input type="email" id="email" required />
+                  </div>
+                  <div class="input-group">
+                    <label for="phone">PHONE NUMBER</label>
+                    <input type="tel" id="phone" required />
+                  </div>
+                </div>
+
+                <div class="input-group">
+                  <label for="message">WHAT DO YOU HAVE IN MIND</label>
+                  <textarea id="message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="btn primary-btn">
+                  Send Message
+                </button>
+              </form>
+            </div>
+
+            <!-- Right Column - Contact Info -->
+            <div class="contact-info">
+              <div class="info-card">
+                <div class="icon-box gradient-bg">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="info-content">
+                  <h4>Let's Talk</h4>
+                  <p>+1238 3258 5679</p>
+                  <div class="line-effect"></div>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="icon-box gradient-bg">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="info-content">
+                  <h4>Digital Mail</h4>
+                  <p>hello@worldix.com</p>
+                  <div class="line-effect"></div>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="icon-box gradient-bg">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="info-content">
+                  <h4>Visit Us</h4>
+                  <p>102 atnet, y oros 485858</p>
+                  <div class="line-effect"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-
-    <!-- Navbar Component -->
-    <div class="navbar-space"></div>
-    <nav class="navbar">
-      <div class="logo">
-        <h1>SpotLight</h1>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">How It Works</a></li>
-        <li><a href="#">Use Case</a></li>
-        <li><a href="#" class="btn white-btn">Contact Us</a></li>
-        <li>
-          <input type="checkbox" class="theme-checkbox" />
-        </li>
-      </ul>
-      <div class="hamburger">
-        <span class="line"></span>
-        <span class="line"></span>
-      </div>
-    </nav>
-
-    <!-- Mobile Menu Component -->
-    <div class="menubar">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#" class="btn white-btn">Contact Us</a></li>
-        <li>
-          <input type="checkbox" class="theme-checkbox" />
-        </li>
-      </ul>
-    </div>
-
-    <!-- Hero Section Component -->
-    <section class="responsive-section">
-      <div class="flex-container">
-        <div class="flex-item">
-          <h1>Experience 3D Like Never Before, Bring Objects to Life!</h1>
-          <p>
-            Spotlight lets you turn 3D models into interactive AR experiences.
-            Simply scan, place, and explore objects in your real-world space
-            using your phone
-          </p>
-          <a href="#" class="btn primary-btn">Primary Button</a>
-        </div>
-        <div class="flex-item robot">
-          <!-- 3D Robot Scene -->
-          <canvas id="canvas3d"></canvas>
-        </div>
-      </div>
-    </section>
-
-    <!-- Add after the Hero section ----------------------------------------------------------->
-    <section class="how-it-works responsive-section" id="how-it-works"  >
-      <div class="section-header" data-aos="fade-up">
-        <h2>How It Works</h2>
-        <p>
-          Transform your 3D models into immersive AR experiences in three simple
-          steps
-        </p>
-      </div>
-
-      <div class="steps-container">
-        <div class="step-card" data-aos="fade-up">
-          <div class="step-number">1</div>
-          <h3>Upload Your Model</h3>
-          <p>
-            Import your 3D assets directly through our web interface or API. We
-            support all major 3D file formats.
-          </p>
-        </div>
-
-        <div class="step-card" data-aos="fade-up">
-          <div class="step-number">2</div>
-          <h3>Configure Settings</h3>
-          <p>
-            Adjust materials, interactions, and AR placement parameters using
-            our intuitive dashboard.
-          </p>
-        </div>
-
-        <div class="step-card" data-aos="fade-up">
-          <div class="step-number">3</div>
-          <h3>Share & Experience</h3>
-          <p>
-            Generate a shareable link or embed code. Viewers can access the AR
-            experience directly in their browsers.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- sections -->
-    <section class="categories-showcase responsive-section" id="categories"   >
-      <div class="section-header">
-        <h2>Explore Collections</h2>
-        <p>Discover objects from various categories ready for AR exploration</p>
-      </div>
-
-      <!-- Furniture Collection -->
-      <div class="category-group"  >
-        <h3 class="category-title">Furniture Collection</h3>
-        <div class="cards-grid">
-          <div class="category-card">
-            <div class="card-image furniture-1"></div>
-            <div class="card-content">
-              <h4>Modern Sofa</h4>
-              <p>
-                Experience contemporary furniture design in your living space
-                with realistic material textures.
-              </p>
-              <a href="#" class="btn secondary-btn">View in AR</a>
-            </div>
-          </div>
-          <div class="category-card">
-            <div class="card-image furniture-2"></div>
-            <div class="card-content">
-              <h4>Dining Set</h4>
-              <p>
-                Test different table configurations and chair arrangements in
-                your actual dining area.
-              </p>
-              <a href="#" class="btn secondary-btn">View in AR</a>
-            </div>
-          </div>
-          <div class="category-card">
-            <div class="card-image furniture-3"></div>
-            <div class="card-content">
-              <h4>Bookshelf</h4>
-              <p>
-                Visualize storage solutions with accurate dimension
-                representation in your space.
-              </p>
-              <a href="#" class="btn secondary-btn">View in AR</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Medical Collection -->
-      <div class="category-group">
-        <h3 class="category-title">Medical Models</h3>
-        <div class="cards-grid">
-          <div class="category-card">
-            <div class="card-image medical-1"></div>
-            <div class="card-content">
-              <h4>Human Anatomy</h4>
-              <p>
-                Interactive 3D model of human muscular system with layer control
-                functionality.
-              </p>
-              <a href="#" class="btn secondary-btn">View in AR</a>
-            </div>
-          </div>
-          <div class="category-card">
-            <div class="card-image medical-2"></div>
-            <div class="card-content">
-              <h4>Surgical Tools</h4>
-              <p>
-                Detailed models of medical instruments for training and
-                demonstration purposes.
-              </p>
-              <a href="#" class="btn secondary-btn">View in AR</a>
-            </div>
-          </div>
-          <div class="category-card">
-            <div class="card-image medical-3"></div>
-            <div class="card-content">
-              <h4>Organ Models</h4>
-              <p>
-                Rotatable 3D heart model with cutaway views and blood flow
-                visualization.
-              </p>
-              <a href="#" class="btn secondary-btn">View in AR</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Food Collection -->
-      <div class="category-group">
-        <h3 class="category-title">Food & Packaging</h3>
-        <div class="cards-grid">
-          <div class="category-card">
-            <div class="card-image food-1"></div>
-            <div class="card-content">
-              <h4>Product Packaging</h4>
-              <p>
-                View food packaging designs in realistic environments with scale
-                accuracy.
-              </p>
-              <a href="#" class="btn secondary-btn">View in AR</a>
-            </div>
-          </div>
-          <div class="category-card">
-            <div class="card-image food-2"></div>
-            <div class="card-content">
-              <h4>Restaurant Dishes</h4>
-              <p>
-                Preview menu items in AR with realistic lighting and texture
-                mapping.
-              </p>
-              <a href="#" class="btn secondary-btn">View in AR</a>
-            </div>
-          </div>
-          <div class="category-card">
-            <div class="card-image food-3"></div>
-            <div class="card-content">
-              <h4>Nutrition Display</h4>
-              <p>
-                Interactive food models with nutritional information layers.
-              </p>
-              <a href="#" class="btn secondary-btn">View in AR</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Clothing Collection -->
-      <div class="category-group">
-        <h3 class="category-title">Fashion Collection</h3>
-        <div class="cards-grid">
-          <div class="category-card">
-            <div class="card-image clothing-1"></div>
-            <div class="card-content">
-              <h4>Casual Wear</h4>
-              <p>
-                Virtual try-on for everyday outfits with realistic fabric
-                simulation.
-              </p>
-              <a href="#" class="btn secondary-btn">View in AR</a>
-            </div>
-          </div>
-          <div class="category-card">
-            <div class="card-image clothing-2"></div>
-            <div class="card-content">
-              <h4>Formal Attire</h4>
-              <p>
-                View tailored suits and dresses in your environment with proper
-                drape physics.
-              </p>
-              <a href="#" class="btn secondary-btn">View in AR</a>
-            </div>
-          </div>
-          <div class="category-card">
-            <div class="card-image clothing-3"></div>
-            <div class="card-content">
-              <h4>Accessories</h4>
-              <p>
-                Try watches, glasses, and jewelry in AR with realistic
-                reflections.
-              </p>
-              <a href="#" class="btn secondary-btn">View in AR</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-
-
-
-    </section>
-   
-
-
-    <!-- Add this section before closing </body> -->
-    <section class="responsive-section" id="spotlight-faq">
-      <div class="faq-header">
-        <h2>Spotlight FAQ</h2>
-        <p class="subheader">
-          Answers to common questions about AR experiences
-        </p>
-        <p class="description">
-          Whether you're new to augmented reality or looking to enhance your
-          current workflow, find everything you need to know about creating and
-          managing AR content with Spotlight.
-        </p>
-      </div>
-
-      <div class="faq-grid">
-        <!-- Column 1 -->
-        <div class="faq-column">
-          <div class="faq-item">
-            <div class="question">
-              <h3>What devices support AR viewing?</h3>
-              <span class="arrow">→</span>
-            </div>
-            <div class="answer">
-              <p>
-                Spotlight works on iOS and Android devices with ARCore/ARKit
-                support. No special apps required - works directly in mobile
-                browsers.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div class="question">
-              <h3>How do I upload 3D models?</h3>
-              <span class="arrow">→</span>
-            </div>
-            <div class="answer">
-              <p>
-                Use our web dashboard or API to upload GLB/GLTF files. We
-                automatically optimize models for AR viewing.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Column 2 -->
-        <div class="faq-column">
-          <div class="faq-item">
-            <div class="question">
-              <h3>Can I try before subscribing?</h3>
-              <span class="arrow">→</span>
-            </div>
-            <div class="answer">
-              <p>
-                Yes! Start with our free tier offering 5 AR experiences and
-                basic analytics.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div class="question">
-              <h3>What about data privacy?</h3>
-              <span class="arrow">→</span>
-            </div>
-            <div class="answer">
-              <p>
-                All model data is encrypted at rest and in transit. We comply
-                with GDPR and CCPA regulations.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="contact-section">
-      <div class="contact-container">
-        <div class="contact-header">
-          <h2>Contact us</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna al ligua. Ut
-            enim
-          </p>
-        </div>
-
-        <div class="contact-grid">
-          <!-- Left Column - Form -->
-          <div class="contact-form">
-            <form>
-              <div class="form-row">
-                <div class="input-group">
-                  <label for="firstName">FIRST NAME</label>
-                  <input type="text" id="firstName" required />
-                </div>
-                <div class="input-group">
-                  <label for="lastName">LAST NAME</label>
-                  <input type="text" id="lastName" required />
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="input-group">
-                  <label for="email">EMAIL</label>
-                  <input type="email" id="email" required />
-                </div>
-                <div class="input-group">
-                  <label for="phone">PHONE NUMBER</label>
-                  <input type="tel" id="phone" required />
-                </div>
-              </div>
-
-              <div class="input-group">
-                <label for="message">WHAT DO YOU HAVE IN MIND</label>
-                <textarea id="message" rows="5" required></textarea>
-              </div>
-
-              <button type="submit" class="btn primary-btn">
-                Send Message
-              </button>
-            </form>
-          </div>
-
-          <!-- Right Column - Contact Info -->
-          <div class="contact-info">
-            <div class="info-card">
-              <div class="icon-box gradient-bg">
-                <i class="fas fa-phone"></i>
-              </div>
-              <div class="info-content">
-                <h4>Let's Talk</h4>
-                <p>+1238 3258 5679</p>
-                <div class="line-effect"></div>
-              </div>
-            </div>
-
-            <div class="info-card">
-              <div class="icon-box gradient-bg">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class="info-content">
-                <h4>Digital Mail</h4>
-                <p>hello@worldix.com</p>
-                <div class="line-effect"></div>
-              </div>
-            </div>
-
-            <div class="info-card">
-              <div class="icon-box gradient-bg">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <div class="info-content">
-                <h4>Visit Us</h4>
-                <p>102 atnet, y oros 485858</p>
-                <div class="line-effect"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    </div>
-     <footer class="footer" style="display: flex;">
+    <footer class="footer" style="display: flex">
       <p class="content">The hidden footer</p>
-      
-       
     </footer>
-    
 
     <script type="module" src="main.js"></script>
     <script>
@@ -525,9 +516,8 @@
   </body>
 </html>
 
-
-  <!-- Scroll Animation Section -->
-    <!-- <section id="scroll-animation-section">
+<!-- Scroll Animation Section -->
+<!-- <section id="scroll-animation-section">
       <svg viewBox="0 0 476 927" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           id="scroll-line"
