@@ -14,8 +14,13 @@
     <link rel="stylesheet" href="/css/normalize.css" />
     <!-- AOS CSS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <!-- Add Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
 
-    <!-- this is a return version -->
+   
   </head>
   <body>
     <div class="page">
@@ -35,8 +40,8 @@
       </div>
 
       <!-- Navbar Component -->
-      <div class="navbar-space"></div>
-      <nav class="navbar">
+      <div class="navbar-space">
+        <nav class="navbar">
         <div class="logo">
           <h1>SpotLight</h1>
         </div>
@@ -54,6 +59,8 @@
           <span class="line"></span>
         </div>
       </nav>
+      </div>
+      
 
       <!-- Mobile Menu Component -->
       <div class="menubar">
@@ -458,8 +465,48 @@
         </div>
       </section>
     </div>
-    <footer class="footer" style="display: flex">
-      <p class="content">The hidden footer</p>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Logo Column -->
+        <div class="footer-column">
+          <div class="footer-logo">
+            <h2>SpotLight</h2>
+            <p class="slogan">
+              Augment Your Reality with Cutting-Edge 3D and AR Experiences.
+              Transform Your World Today!
+            </p>
+          </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Use Case</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Media Column -->
+        <div class="footer-column">
+          <h4>Connect With Us</h4>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="copyright-bar">
+        <p>&copy; 2024 SpotLight. All rights reserved.</p>
+      </div>
+      
     </footer>
 
     <script type="module" src="main.js"></script>

@@ -31,6 +31,9 @@
   box-sizing: border-box;
   line-height: 1.5;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "Onest", "Plus Jakarta Sans", "Inter", sans-serif;
@@ -147,7 +150,7 @@ p {
   top: 0;
   left: 0;
   width: 100%;
-  height: 6rem;
+  height: rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -155,6 +158,7 @@ p {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   z-index: 1000;
+  margin-bottom: 2rem;
 }
 
 .navbar .logo {
@@ -682,14 +686,9 @@ p {
   }
 }
 
-
-
-
 /* ========================
    Categories Showcase
 ======================== */
-
-
 
 .categories-showcase {
   padding: 6rem 2rem;
@@ -844,7 +843,7 @@ p {
 /* Mobile-specific styles (stacking cards) */
 @media (max-width: 768px) {
   .category-title {
-     position: sticky;
+    position: sticky;
     top: 70px;
     font-size: 2.2rem;
     margin-bottom: 2rem;
@@ -861,7 +860,7 @@ p {
     position: sticky;
     top: 120px; /* Adjust this value to control the stacking spacing */
     margin-bottom: 20px;
-    
+
     transform: none !important; /* Disable hover transform on mobile */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important; /* Disable hover shadow on mobile */
   }
@@ -1414,34 +1413,208 @@ p {
 /* ========================
    Footer Styles
 ======================== */
-
-/* ========================
-    Footer  this need to be fixed
-======================== */
-
 .page {
   background: inherit;
   position: relative;
   z-index: 1;
-  
+  min-height: 100vh; /* Ensure footer sticks properly */
 }
 
 .footer {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   background: var(--secondary-color);
   position: sticky;
   bottom: 0;
-  height: 400px;
+  height: auto;
+  color: var(--primary-color);
+  padding: 2rem 1rem;
+  gap: 2rem;
+  border-top: 1px solid var(--accent-soft-color);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Default layout for larger screens */
+  gap: 3rem;
+  padding: 0 1rem;
+  width: 100%; /* Ensure the container takes full width */
+}
+
+/* Make the first column take half the space */
+.footer-container {
+  grid-template-columns: 2fr 1fr 1fr; /* First column takes 2 parts, others take 1 part */
+}
+
+.footer-column {
+  text-align: center;
+  padding: 1rem;
+}
+
+/* First column styles */
+.footer-column:first-child {
+  text-align: left; /* Align text to the left for the first column */
+}
+
+.footer-logo h2 {
+  font-size: 3.5rem;
+  background: linear-gradient(to right, #b927fc 0%, #2c64fc 20%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.slogan {
+  color: var(rgb(135, 135, 135));
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
+.footer-column h4 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-column h4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: var(--accent-soft-color);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-links a {
+  color: var(--accent-soft-color);
+  text-decoration: none;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
   color: var(--primary-color);
 }
 
-.content {
-  font-size: 32px;
-  font-weight: 600;
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
+.social-icons a {
+  color: var(--accent-soft-color);
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
 
+.social-icons a:hover {
+  color: var(--primary-color);
+}
 
-/* hidden */
+.copyright-bar {
+  padding: 1.5rem 0 0;
+  text-align: center;
+  width: 100%;
+  position: relative; /* Needed for the pseudo-element */
+}
+
+.copyright-bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%; /* Adjust this value to control the border length */
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--primary-color) 20%,
+    var(--primary-color) 80%,
+    transparent 100%
+  );
+}
+
+.copyright-bar p {
+  color: var(--accent-soft-color);
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+ 
+  .footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 2rem;
+  }
+
+  .footer-column {
+    text-align: center;
+  }
+
+  .footer-column:first-child {
+    text-align: center; /* Center text for the first column on mobile */
+  }
+
+  .footer-column h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding: 3rem 2rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 2fr 1fr 1fr; /* First column takes half, others take equal space */
+    gap: 4rem;
+  }
+
+  .footer-column {
+    text-align: left;
+  }
+
+  .footer-column h4::after {
+    left: 0;
+    transform: none;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-container {
+    padding: 0 2rem;
+  }
+}
