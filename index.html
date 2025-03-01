@@ -5,6 +5,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <!-- Primary Meta Tags -->
   <title>
@@ -65,6 +66,20 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- Performance Optimizations -->
+  <meta http-equiv="Cache-Control" content="max-age=31536000">
+
+  <!-- Resource Hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="preload" href="js/main.js" as="script">
+
+  <!-- Critical Font Loading -->
+  <link rel="preload" as="font" href="path-to-your-onest-font.woff2" type="font/woff2" crossorigin>
 </head>
 
 <body>
@@ -643,4 +658,3 @@
 </body>
 
 </html>
-
