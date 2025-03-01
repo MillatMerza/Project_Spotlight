@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
         loadingScreen.style.display = "none";
       }, 500);
-    }, 2000);
+    }, 4000);
   }
 
   // Navbar Toggle (immediately executed)
