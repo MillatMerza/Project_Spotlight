@@ -17,7 +17,7 @@
   --secondary-color: #fff !important;
   --accent-color: rgb(231, 231, 231) !important;
   --accent-soft-color: rgb(160, 160, 160) !important;
-  --card-backgroun: #101010 !important;
+  --card-backgroun: #0a0a0a !important;
 }
 
 /* ========================
@@ -865,34 +865,135 @@ p {
   text-transform: uppercase;
 }
 
+/* Update Categories Showcase cards */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
   padding: 0 2rem;
 }
 
 .category-card {
   background: var(--card-backgroun);
-  border-radius: 20px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid var(--card-backgroun);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(var(--accent-soft-color), 0.1);
 }
 
 .category-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
 .card-image {
-  height: 220px;
-  background-size: cover;
-  background-position: center;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  transition: transform 0.3s ease;
+  height: 240px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(to top, var(--card-backgroun), transparent);
+  pointer-events: none;
+}
+
+.card-content {
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card-content h4 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.card-content h4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2.5rem;
+  height: 2px;
+  background: linear-gradient(to right, #b927fc, #2c64fc);
+  border-radius: 2px;
+}
+
+.card-content p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: var(--accent-soft-color);
+  margin-bottom: 2rem;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.card-actions button {
+  background: transparent;
+  color: var(--secondary-color);
+  border: 1.5px solid var(--accent-soft-color);
+  border-radius: 8px;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card-actions button:hover {
+  background: linear-gradient(45deg, #b927fc, #2c64fc);
+  border-color: transparent;
+  color: white;
+}
+
+/* Add category tag styles */
+.category-tag {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--secondary-color);
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1.5rem;
+  }
+
+  .card-content {
+    padding: 1.5rem;
+  }
+
+  .card-content h4 {
+    font-size: 1.6rem;
+  }
+
+  .card-content p {
+    font-size: 1.3rem;
+  }
 }
 
 .category-card:hover .card-image {
