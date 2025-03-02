@@ -589,9 +589,8 @@ p {
   position: relative;
   cursor: pointer;
   background-color: #fff;
-  box-shadow: 0 0 0 2px rgba(156, 66, 225, 0.5),
-              0 4px 15px rgba(0, 0, 0, 0.5), 
-              inset 0 0 15px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 2px rgba(156, 66, 225, 0.5), 0 4px 15px rgba(0, 0, 0, 0.5),
+    inset 0 0 15px rgba(255, 255, 255, 0.05);
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   margin-top: 5px;
   border: none;
@@ -635,10 +634,9 @@ p {
 /* Checked state styles - improved dark background */
 .theme-checkbox:checked {
   background-color: #1a1a1a;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 
-              0 0 30px 10px rgba(0, 0, 0, 0.3), 
-              inset 0 0 15px rgba(255, 255, 255, 0.05),
-              inset 0 0 3px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 30px 10px rgba(0, 0, 0, 0.3),
+    inset 0 0 15px rgba(255, 255, 255, 0.05),
+    inset 0 0 3px rgba(255, 255, 255, 0.2);
 }
 
 .theme-checkbox:checked::before {
@@ -651,17 +649,15 @@ p {
 
 /* Improved hover effects */
 .theme-checkbox:hover {
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15), 
-              0 0 50px 15px rgba(0, 0, 0, 0.1),
-              inset 0 -2px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15), 0 0 50px 15px rgba(0, 0, 0, 0.1),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.05);
   transform: translateY(-3px);
 }
 
 .theme-checkbox:checked:hover {
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6), 
-              0 0 50px 15px rgba(0, 0, 0, 0.35),
-              inset 0 0 20px rgba(255, 255, 255, 0.07),
-              inset 0 0 5px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6), 0 0 50px 15px rgba(0, 0, 0, 0.35),
+    inset 0 0 20px rgba(255, 255, 255, 0.07),
+    inset 0 0 5px rgba(255, 255, 255, 0.2);
 }
 
 /* Active state for better feedback */
@@ -669,7 +665,6 @@ p {
   transform: scale(0.92);
   transition: all 0.2s ease;
 }
-
 
 /* ========================
    How It Works Section - Modern Design
@@ -847,7 +842,6 @@ p {
 
   .section-header h2 {
     font-size: 2rem;
-    
   }
 
   .section-header p {
@@ -890,13 +884,12 @@ p {
 }
 
 .category-title {
-  font-size: 0.6rem;
+  font-size: 2.6rem;
   color: #4a4a4a;
   margin-bottom: 3rem;
   padding-left: 2rem;
   border-left: 4px solid #007bff;
   text-transform: uppercase;
-  
 }
 
 /* Updated Categories Showcase cards */
@@ -905,7 +898,6 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 3rem;
   padding: 2rem;
-  
 }
 
 .category-card {
@@ -919,8 +911,6 @@ p {
   flex-direction: column;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-
-
 
 .category-card:hover::before {
   opacity: 1;
@@ -1022,7 +1012,7 @@ p {
 }
 
 .card-actions button::after {
-  content: '→';
+  content: "→";
   transition: transform 0.3s ease;
 }
 
@@ -1399,7 +1389,6 @@ p {
     padding: 0 1.5rem;
   }
 }
-
 
 /* ========================
    Contact Us Section - Modern Design
@@ -2020,8 +2009,6 @@ p {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-
-  
 }
 /* Ai section */
 /* ========================
