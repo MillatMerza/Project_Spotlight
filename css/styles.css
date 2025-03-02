@@ -1132,7 +1132,7 @@ p {
   .card-image {
     height: 200px;
   }
-}
+
 
 @media (min-width: 1024px) {
   .category-card {
