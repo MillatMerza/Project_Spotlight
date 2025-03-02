@@ -664,16 +664,10 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script type="module" src="main.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    function openModel() {
-      let viewer = document.getElementById("robotViewer");
-      viewer.style.display = "block"; // Show the model
-
-      // Optional: If you want AR to open directly
-      if (viewer.canActivateAR) {
-        viewer.activateAR();
-      }
-    }
+    AOS.init();
   </script>
 </body>
 
