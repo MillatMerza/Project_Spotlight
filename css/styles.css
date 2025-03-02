@@ -658,6 +658,7 @@ p {
   color: var(--secondary-color);
   margin-bottom: 1.5rem;
   font-weight: 700;
+  text-align: center;
 }
 
 .section-header p {
@@ -665,6 +666,7 @@ p {
   color: var(--accent-soft-color);
   max-width: 600px;
   margin: 0 auto 4rem;
+  text-align: center;
 }
 
 .steps-container {
@@ -815,6 +817,7 @@ p {
 
   .section-header h2 {
     font-size: 2rem;
+    
   }
 
   .section-header p {
@@ -863,6 +866,7 @@ p {
   padding-left: 2rem;
   border-left: 4px solid #007bff;
   text-transform: uppercase;
+  
 }
 
 /* Updated Categories Showcase cards */
@@ -871,6 +875,7 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 3rem;
   padding: 2rem;
+  
 }
 
 .category-card {
@@ -882,18 +887,10 @@ p {
   border: 1px solid rgba(var(--accent-soft-color), 0.08);
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.category-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(45deg, 
-    rgba(185, 39, 252, 0.05), 
-    rgba(44, 100, 252, 0.05));
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
+
 
 .category-card:hover::before {
   opacity: 1;
@@ -1081,10 +1078,10 @@ p {
 }
 /* Category Color Variations */
 .category-group:nth-child(odd) .category-title {
-  border-color: #b927fc;
+  border-color: var(--secondary-color);
 }
 .category-group:nth-child(even) .category-title {
-  border-color: #2c64fc;
+  border-color: var(--secondary-color);
 }
 
 /* Mobile-specific styles (stacking cards) */
@@ -1106,7 +1103,7 @@ p {
   .category-card {
     position: sticky;
     top: 140px; /* Adjust this value to control the stacking spacing */
-    margin-bottom: 6rem;
+    margin-bottom: 6rem !important;
     transform: none !important; /* Disable hover transform on mobile */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important; /* Disable hover shadow on mobile */
   }
