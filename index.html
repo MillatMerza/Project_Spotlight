@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Replace the existing <head> section with this enhanced version -->
 
 <head>
   <meta charset="UTF-8" />
@@ -8,17 +7,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <!-- Primary Meta Tags -->
-  <title>
-    Spotlight | Transform 3D Models into Interactive AR Experiences
-  </title>
+  <title>Spotlight | Transform 3D Models into Interactive AR Experiences</title>
   <meta name="description"
     content="Spotlight converts your 3D models into augmented reality experiences. Visualize products in real-world environments using AR technology. Perfect for designers, marketers, and educators." />
   <meta name="author" content="Spotlight AR Technologies" />
   <meta name="keywords"
     content="Augmented Reality, 3D Modeling, AR Visualization, Interactive 3D, AR Technology, Product Visualization, AR Platform" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-
- 
 
   <!-- Mobile Web App Capabilities -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -30,30 +25,26 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Onest:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css" />
-  <link rel="stylesheet" href="/css/normalize.css" />
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
   <!-- Performance Optimizations -->
   <meta http-equiv="Cache-Control" content="max-age=31536000">
 
-  <!-- Resource Hints -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <!-- Preload Critical Assets -->
   <link rel="preload" href="css/styles.css" as="style">
+  <link rel="preload" href="css/normalize.css" as="style">
   <link rel="preload" href="js/main.js" as="script">
-
-  <!-- Critical Font Loading -->
   <link rel="preload" as="font" href="path-to-your-onest-font.woff2" type="font/woff2" crossorigin>
-
-  <!-- Add these lines in the <head> section -->
   <link rel="preload" as="script" href="https://unpkg.com/@splinetool/runtime" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/normalize.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
 
 <body>
@@ -81,14 +72,14 @@
         </div>
         <ul class="nav-links">
           <li><a href="#">Home</a></li>
-          <li><a href="#">How It Works</a></li>
-          <li><a href="#">Use Case</a></li>
-          <li><a href="#" class="btn secondary-btn">Contact Us</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#categories">Use Case</a></li>
+          <li><a href="#contact-us" class="btn secondary-btn">Contact Us</a></li>
           <li>
-            <input type="checkbox" class="theme-checkbox" />
+            <input type="checkbox" class="theme-checkbox" id="themeToggle" aria-label="Toggle dark/light mode" />
           </li>
         </ul>
-        <div class="hamburger">
+        <div class="hamburger" aria-label="Menu toggle" role="button" tabindex="0">
           <span class="line"></span>
           <span class="line"></span>
         </div>
@@ -99,17 +90,17 @@
     <div class="menubar">
       <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#" class="btn secondary-btn">Contact Us</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#categories">Use Case</a></li>
+        <li><a href="#contact-us" class="btn secondary-btn">Contact Us</a></li>
         <li>
-          <input type="checkbox" class="theme-checkbox" />
+          <input type="checkbox" class="theme-checkbox" aria-label="Toggle dark/light mode" />
         </li>
       </ul>
     </div>
 
     <!-- Hero Section Component -->
-    <section class="responsive-section">
+    <section class="responsive-section" data-aos="fade-up" data-aos-duration="800">
       <div class="flex-container">
         <div class="flex-item">
           <h1>Experience 3D Like Never Before, Bring Objects to Life!</h1>
@@ -124,15 +115,75 @@
             auto-rotate camera-controls style="display: none">
           </model-viewer>
         </div>
-        <div class="flex-item robot">
+        <div class="flex-item robot" data-aos="fade-left" data-aos-delay="200">
           <!-- 3D Robot Scene -->
           <canvas id="canvas3d"></canvas>
           <div class="gradient-divider"></div>
         </div>
       </div>
     </section>
+    <!-- new add -->
+      <!-- HTML Section -->
+      <section class="ai-image-converter responsive-section" id="ai-image-converter" data-aos="fade-up"
+        data-aos-duration="800">
+        <div class="section-header">
+          <h2>AI-Powered Image to 3D Conversion</h2>
+          <p>
+            Transform any image into a detailed 3D object with our cutting-edge AI technology
+          </p>
+        </div>
+      
+        <div class="converter-container">
+          <div class="converter-info" data-aos="fade-right" data-aos-delay="100">
+            <h3>Revolutionary AI Technology</h3>
+            <ul class="feature-list">
+              <li>
+                <i class="fas fa-brain"></i>
+                <span>Advanced neural networks analyze image contours and textures</span>
+              </li>
+              <li>
+                <i class="fas fa-magic"></i>
+                <span>Automatic depth mapping and material recognition</span>
+              </li>
+              <li>
+                <i class="fas fa-clock"></i>
+                <span>Convert complex images in minutes, not hours</span>
+              </li>
+              <li>
+                <i class="fas fa-cogs"></i>
+                <span>Fine-tune generated models with intuitive controls</span>
+              </li>
+            </ul>
+            <a href="/image-converter" class="cta-button">
+              <span>Convert Your Image Now</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="converter-visual" data-aos="fade-left" data-aos-delay="200">
+            <div class="conversion-illustration">
+              <div class="image-side">
+                <div class="image-placeholder">
+                  <i class="fas fa-image"></i>
+                  <span>2D Image</span>
+                </div>
+                <div class="arrow-animation">
+                  <i class="fas fa-long-arrow-alt-right"></i>
+                </div>
+              </div>
+              <div class="model-side">
+                <div class="model-placeholder">
+                  <i class="fas fa-cube"></i>
+                  <span>3D Model</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+     
+     <!-- new add -->
 
-    <section class="how-it-works responsive-section" id="how-it-works">
+    <section class="how-it-works responsive-section" id="how-it-works" data-aos="fade-up" data-aos-duration="800">
       <div class="section-header">
         <h2>How It Works</h2>
         <p>
@@ -142,7 +193,7 @@
       </div>
 
       <div class="steps-container">
-        <div class="step-card">
+        <div class="step-card" data-aos="fade-up" data-aos-delay="100">
           <div class="step-number">1</div>
           <div class="step-icon">
             <i class="fas fa-cube"></i>
@@ -155,7 +206,7 @@
           </p>
         </div>
 
-        <div class="step-card">
+        <div class="step-card" data-aos="fade-up" data-aos-delay="200">
           <div class="step-number">2</div>
           <div class="step-icon">
             <i class="fas fa-sliders-h"></i>
@@ -169,7 +220,7 @@
           </p>
         </div>
 
-        <div class="step-card">
+        <div class="step-card" data-aos="fade-up" data-aos-delay="300">
           <div class="step-number">3</div>
           <div class="step-icon">
             <i class="fas fa-share-alt"></i>
@@ -185,7 +236,7 @@
     </section>
 
     <!-- sections -->
-    <section class="categories-showcase responsive-section" id="categories">
+    <section class="categories-showcase responsive-section" id="categories" data-aos="fade-up" data-aos-duration="800">
       <div class="section-header">
         <h2>Explore Collections</h2>
         <p>
@@ -194,10 +245,10 @@
       </div>
 
       <!-- Furniture Collection -->
-      <div class="category-group">
+      <div class="category-group" data-aos="fade-up" data-aos-delay="100">
         <h3 class="category-title">Furniture Collection</h3>
         <div class="cards-grid">
-          <div class="category-card">
+          <div class="category-card" data-aos="fade-up" data-aos-delay="150">
             <div class="card-image furniture-1"></div>
             <div class="card-content">
               <h4>Modern Sofa</h4>
@@ -208,7 +259,7 @@
               <a href="#" class="btn primary-btn">View in AR</a>
             </div>
           </div>
-          <div class="category-card">
+          <div class="category-card" data-aos="fade-up" data-aos-delay="200">
             <div class="card-image furniture-2"></div>
             <div class="card-content">
               <h4>Dining Set</h4>
@@ -219,7 +270,7 @@
               <a href="#" class="btn primary-btn">View in AR</a>
             </div>
           </div>
-          <div class="category-card">
+          <div class="category-card" data-aos="fade-up" data-aos-delay="250">
             <div class="card-image furniture-3"></div>
             <div class="card-content">
               <h4>Bookshelf</h4>
@@ -230,7 +281,7 @@
               <a href="#" class="btn primary-btn">View in AR</a>
             </div>
           </div>
-          <div class="category-card">
+          <div class="category-card" data-aos="fade-up" data-aos-delay="300">
             <div class="card-image furniture-3"></div>
             <div class="card-content">
               <h4>Bookshelf</h4>
@@ -241,7 +292,7 @@
               <a href="#" class="btn primary-btn">View in AR</a>
             </div>
           </div>
-          <div class="category-card">
+          <div class="category-card" data-aos="fade-up" data-aos-delay="350">
             <div class="card-image furniture-3"></div>
             <div class="card-content">
               <h4>Bookshelf</h4>
@@ -256,10 +307,10 @@
       </div>
 
       <!-- Medical Collection -->
-      <div class="category-group">
+      <div class="category-group" data-aos="fade-up" data-aos-delay="100">
         <h3 class="category-title">Medical Models</h3>
         <div class="cards-grid">
-          <div class="category-card">
+          <div class="category-card" data-aos="fade-up" data-aos-delay="150">
             <div class="card-image medical-1"></div>
             <div class="card-content">
               <h4>Human Anatomy</h4>
@@ -270,7 +321,7 @@
               <a href="#" class="btn primary-btn">View in AR</a>
             </div>
           </div>
-          <div class="category-card">
+          <div class="category-card" data-aos="fade-up" data-aos-delay="200">
             <div class="card-image medical-2"></div>
             <div class="card-content">
               <h4>Surgical Tools</h4>
@@ -281,7 +332,7 @@
               <a href="#" class="btn primary-btn">View in AR</a>
             </div>
           </div>
-          <div class="category-card">
+          <div class="category-card" data-aos="fade-up" data-aos-delay="250">
             <div class="card-image medical-3"></div>
             <div class="card-content">
               <h4>Organ Models</h4>
@@ -296,10 +347,10 @@
       </div>
 
       <!-- Food Collection -->
-      <div class="category-group">
+      <div class="category-group" data-aos="fade-up" data-aos-delay="100">
         <h3 class="category-title">Food & Packaging</h3>
         <div class="cards-grid">
-          <div class="category-card">
+          <div class="category-card" data-aos="fade-up" data-aos-delay="150">
             <div class="card-image food-1"></div>
             <div class="card-content">
               <h4>Product Packaging</h4>
@@ -310,7 +361,7 @@
               <a href="#" class="btn primary-btn">View in AR</a>
             </div>
           </div>
-          <div class="category-card">
+          <div class="category-card" data-aos="fade-up" data-aos-delay="200">
             <div class="card-image food-2"></div>
             <div class="card-content">
               <h4>Restaurant Dishes</h4>
@@ -321,7 +372,7 @@
               <a href="#" class="btn primary-btn">View in AR</a>
             </div>
           </div>
-          <div class="category-card">
+          <div class="category-card" data-aos="fade-up" data-aos-delay="250">
             <div class="card-image food-3"></div>
             <div class="card-content">
               <h4>Nutrition Display</h4>
@@ -335,10 +386,10 @@
       </div>
 
       <!-- Clothing Collection -->
-      <div class="category-group">
+      <div class="category-group" data-aos="fade-up" data-aos-delay="100">
         <h3 class="category-title">Fashion Collection</h3>
         <div class="cards-grid">
-          <div class="category-card">
+          <div class="category-card" data-aos="fade-up" data-aos-delay="150">
             <div class="card-image clothing-1"></div>
             <div class="card-content">
               <h4>Casual Wear</h4>
@@ -349,7 +400,7 @@
               <a href="#" class="btn primary-btn">View in AR</a>
             </div>
           </div>
-          <div class="category-card">
+          <div class="category-card" data-aos="fade-up" data-aos-delay="200">
             <div class="card-image clothing-2"></div>
             <div class="card-content">
               <h4>Formal Attire</h4>
@@ -360,7 +411,7 @@
               <a href="#" class="btn primary-btn">View in AR</a>
             </div>
           </div>
-          <div class="category-card">
+          <div class="category-card" data-aos="fade-up" data-aos-delay="250">
             <div class="card-image clothing-3"></div>
             <div class="card-content">
               <h4>Accessories</h4>
@@ -375,8 +426,8 @@
       </div>
     </section>
 
-    <!-- Add this section before closing </body> -->
-    <section class="responsive-section" id="spotlight-faq">
+    <!-- FAQ Section -->
+    <section class="responsive-section" id="spotlight-faq" data-aos="fade-up" data-aos-duration="800">
       <div class="faq-header">
         <h2>FAQ</h2>
         <p class="subheader">
@@ -391,7 +442,7 @@
 
       <div class="faq-grid">
         <!-- Column 1 -->
-        <div class="faq-column">
+        <div class="faq-column" data-aos="fade-right" data-aos-delay="100">
           <div class="faq-item">
             <div class="question">
               <h3>What devices support AR viewing?</h3>
@@ -433,7 +484,7 @@
         </div>
 
         <!-- Column 2 -->
-        <div class="faq-column">
+        <div class="faq-column" data-aos="fade-left" data-aos-delay="100">
           <div class="faq-item">
             <div class="question">
               <h3>Can I try before subscribing?</h3>
@@ -476,8 +527,8 @@
     </section>
 
     <!-- Contact Us Section -->
-    <section class="responsive-section" id="contact-us">
- data-aos="fade-up"     <div class="contact-header">
+    <section class="responsive-section" id="contact-us" data-aos="fade-up" data-aos-duration="800">
+      <div class="contact-header">
         <h2>Get in Touch</h2>
         <p class="subheader">
           We're here to help bring your AR vision to life
@@ -491,7 +542,7 @@
 
       <div class="contact-container">
         <!-- Contact Form Column -->
-        <div class="contact-form-column">
+        <div class="contact-form-column" data-aos="fade-right" data-aos-delay="100">
           <div class="contact-card">
             <h3>Send Us a Message</h3>
             <form id="contactForm" action="#" method="POST">
@@ -531,7 +582,7 @@
         </div>
 
         <!-- Contact Info Column -->
-        <div class="contact-info-column">
+        <div class="contact-info-column" data-aos="fade-left" data-aos-delay="100">
           <!-- Quick Contact -->
           <div class="info-card">
             <h3>Quick Contact</h3>
@@ -591,7 +642,7 @@
     </section>
   </div>
 
-  <footer class="footer">
+  <footer class="footer" data-aos="fade-up" data-aos-duration="800">
     <div class="footer-container">
       <!-- Logo Column -->
       <div class="footer-column">
@@ -609,9 +660,9 @@
         <h4>Quick Links</h4>
         <ul class="footer-links">
           <li><a href="#">Home</a></li>
-          <li><a href="#">How It Works</a></li>
-          <li><a href="#">Use Case</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#categories">Use Case</a></li>
+          <li><a href="#contact-us">Contact</a></li>
         </ul>
       </div>
 
@@ -619,10 +670,10 @@
       <div class="footer-column">
         <h4>Connect With Us</h4>
         <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         </div>
       </div>
     </div>
@@ -633,17 +684,20 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script type="module" src="main.js"></script>
   <script>
-    function openModel() {
-      let viewer = document.getElementById("robotViewer");
-      viewer.style.display = "block"; // Show the model
+    // Initialize AOS (Animate On Scroll)
+    document.addEventListener('DOMContentLoaded', function () {
+      AOS.init({
+        once: true,      // whether animation should happen only once
+        mirror: false,   // whether elements should animate out while scrolling past them
+        duration: 700    // default animation duration
+      });
+    });
 
-      // Optional: If you want AR to open directly
-      if (viewer.canActivateAR) {
-        viewer.activateAR();
-      }
-    }
+  
   </script>
 </body>
 
