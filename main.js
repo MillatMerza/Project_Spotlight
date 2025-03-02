@@ -1,3 +1,5 @@
+document.getElementById("canvas3d").removeAttribute("style");
+
 document.addEventListener("DOMContentLoaded", function () {
   // Delayed Spline Scene Loader (executed after 500ms)
   setTimeout(() => {
@@ -138,34 +140,33 @@ document.querySelectorAll(".faq-item").forEach((item) => {
   });
 });
 
-
 // ==============================================contect us
 // Add this to your main JavaScript file
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Get the contact form
-  const contactForm = document.getElementById('contactForm');
-  
+  const contactForm = document.getElementById("contactForm");
+
   // Add submit event listener
   if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      
+
       // Get form values
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const subject = document.getElementById('subject').value;
-      const message = document.getElementById('message').value;
-      
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const subject = document.getElementById("subject").value;
+      const message = document.getElementById("message").value;
+
       // Validate form (simple validation)
       if (!name || !email || !subject || !message) {
-        alert('Please fill in all fields');
+        alert("Please fill in all fields");
         return;
       }
-      
+
       // Here you would typically send the form data to your server
       // For demonstration, we'll just show a success message
-      alert('Thank you for your message! We will get back to you soon.');
-      
+      alert("Thank you for your message! We will get back to you soon.");
+
       // Reset the form
       contactForm.reset();
     });

@@ -588,9 +588,9 @@ p {
   position: relative;
   cursor: pointer;
   background-color: #fff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12), 
-              0 0 40px 12px rgba(0, 0, 0, 0.06),
-              inset 0 -2px 5px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 0 0 2px rgba(156, 66, 225, 0.5),
+              0 4px 15px rgba(0, 0, 0, 0.5), 
+              inset 0 0 15px rgba(255, 255, 255, 0.05);
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   margin-top: 5px;
   border: none;
@@ -669,17 +669,7 @@ p {
   transition: all 0.2s ease;
 }
 
-/* Focus state for accessibility */
-.theme-checkbox:focus {
-  box-shadow: 0 0 0 2px rgba(156, 66, 225, 0.5),
-              0 4px 20px rgba(0, 0, 0, 0.15);
-}
 
-.theme-checkbox:checked:focus {
-  box-shadow: 0 0 0 2px rgba(156, 66, 225, 0.5),
-              0 4px 15px rgba(0, 0, 0, 0.5), 
-              inset 0 0 15px rgba(255, 255, 255, 0.05);
-}
 /* ========================
    How It Works Section - Modern Design
 ======================== */
