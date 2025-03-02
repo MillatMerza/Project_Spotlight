@@ -1050,7 +1050,9 @@ p {
 }
 
 .furniture-1 {
-  background-color: #3498db; /* A lighter shade of blue */
+  background-image: url("/1.jpg");
+  z-index: 1000;
+  
 }
 
 .furniture-2 {
@@ -1145,7 +1147,7 @@ p {
 
 /* Example image classes - replace with actual images */
 .furniture-1 {
-  background-image: url("furniture-1.jpg");
+  background-image: url("/1.jpg");
 }
 .furniture-2 {
   background-image: url("furniture-2.jpg");
