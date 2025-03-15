@@ -751,11 +751,13 @@ p {
   padding: 8rem 2rem;
   position: relative;
   background-color: var(--primary-color);
+  width: 100%;
+  max-width: 1400px; /* Match responsive-section max-width */
+  margin: 0 auto;
 }
 
 .converter-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6rem;
@@ -767,9 +769,13 @@ p {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  width: 100%;
+  max-width: 500px; /* Limit maximum width for better readability */
+  margin: 0 auto; /* Center the content */
 }
 
 .converter-header {
+  width: 100%;
   margin-bottom: 1rem;
 }
 
@@ -797,6 +803,9 @@ p {
   color: var(--accent-color);
   line-height: 1.7;
   max-width: 90%;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
 }
 
 /* Removed primary-btn styling as requested */
@@ -878,7 +887,7 @@ p {
 }
 
 .card-content span {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: var(--secondary-color);
   font-weight: 500;
 }
@@ -958,6 +967,8 @@ p {
 
   .converter-content {
     text-align: center;
+    max-width: 100%;
+    padding: 0 2rem;
   }
 
   .converter-header .description {
