@@ -1035,4 +1035,32 @@ p {
       opacity: 0.7;
     }
   }
+
+  .converter-visuals {
+    transform: scale(0.85);
+    margin: -2rem 0; /* Compensate for the extra space caused by scaling */
+  }
+
+  .conversion-demo {
+    padding: 1.5rem; /* Reduce padding to make it more compact */
+  }
+
+  .image-card,
+  .model-card {
+    width: 130px; /* Further reduce card width for mobile */
+  }
+
+  .card-content {
+    height: 130px; /* Adjust height to maintain aspect ratio */
+    padding: 1rem; /* Reduce padding inside cards */
+  }
+
+  .card-content i {
+    font-size: 3rem; /* Slightly smaller icons */
+    margin-bottom: 1rem;
+  }
+
+  .card-content span {
+    font-size: 1.2rem; /* Smaller text */
+  }
 }
