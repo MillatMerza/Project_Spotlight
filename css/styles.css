@@ -1052,7 +1052,6 @@ p {
 .furniture-1 {
   background-image: url("/1.jpg");
   z-index: 1000;
-  
 }
 
 .furniture-2 {
@@ -1185,11 +1184,6 @@ p {
 ======================== */
 #spotlight-faq {
   padding: 8rem 2rem;
-  background: linear-gradient(
-    180deg,
-    var(--primary-color) 0%,
-    rgba(var(--primary-color-rgb), 0.95) 100%
-  );
   position: relative;
 }
 
@@ -1391,4 +1385,3 @@ p {
     padding: 0 1.5rem;
   }
 }
-
