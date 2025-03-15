@@ -68,285 +68,6 @@ p {
   font-weight: 400;
 }
 
-/* Ai section */
-/* ========================
-   AI Image Converter Section - Modern Design
-======================== */
-.ai-image-converter {
-  padding: 7rem 2rem;
-  text-align: center;
-  /* Using a slightly different shade from primary color */
-  position: relative;
-  overflow: hidden;
-}
-
-.ai-image-converter::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  z-index: 0;
-}
-
-.converter-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 4rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-.converter-info {
-  flex: 1;
-  text-align: left;
-  padding: 2rem;
-}
-
-.converter-info h3 {
-  color: var(--secondary-color);
-  font-size: 2.2rem;
-  margin-bottom: 2rem;
-  font-weight: 600;
-  background: linear-gradient(45deg, #b927fc, #2c64fc);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.feature-list {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 3rem;
-}
-
-.feature-list li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1.5rem;
-  color: var(--accent-soft-color);
-  font-size: 1.5rem;
-}
-
-.feature-list li i {
-  font-size: 1.5rem;
-  margin-right: 1rem;
-  color: #b927fc;
-  min-width: 25px;
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.2rem 2.5rem;
-  background: linear-gradient(45deg, #b927fc, #2c64fc);
-  color: white;
-  border-radius: 30px;
-  font-size: 1.6rem;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 10px 20px rgba(44, 100, 252, 0.3);
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-}
-
-.cta-button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(44, 100, 252, 0.4);
-}
-
-.cta-button span {
-  margin-right: 1rem;
-}
-
-.converter-visual {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.conversion-illustration {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.03),
-    rgba(255, 255, 255, 0.01)
-  );
-  backdrop-filter: blur(10px);
-  padding: 3rem;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.image-side,
-.model-side {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.image-placeholder,
-.model-placeholder {
-  width: 180px;
-  height: 180px;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.image-placeholder {
-  background: linear-gradient(145deg, #2a2a36, #1a1a24);
-  box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.model-placeholder {
-  background: linear-gradient(145deg, #2c64fc, #b927fc);
-  box-shadow: 0 8px 25px rgba(44, 100, 252, 0.3);
-  position: relative;
-  overflow: hidden;
-}
-
-.model-placeholder::before {
-  content: "";
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    45deg,
-    transparent 45%,
-    rgba(255, 255, 255, 0.2) 50%,
-    transparent 55%
-  );
-  animation: shineEffect 3s infinite;
-}
-
-@keyframes shineEffect {
-  0% {
-    transform: translateX(-150%) translateY(-150%) rotate(45deg);
-  }
-  100% {
-    transform: translateX(150%) translateY(150%) rotate(45deg);
-  }
-}
-
-.image-placeholder i,
-.model-placeholder i {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.image-placeholder span,
-.model-placeholder span {
-  font-size: 1.4rem;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.arrow-animation {
-  margin: 0 2rem;
-  font-size: 2.5rem;
-  color: #b927fc;
-  animation: pulseArrow 2s infinite;
-}
-
-@keyframes pulseArrow {
-  0% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 992px) {
-  .converter-container {
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  .converter-info {
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .feature-list li {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .ai-image-converter {
-    padding: 5rem 1.5rem;
-  }
-
-  .conversion-illustration {
-    padding: 2rem;
-    flex-direction: column;
-  }
-
-  .arrow-animation {
-    transform: rotate(90deg);
-    margin: 1.5rem 0;
-  }
-
-  .image-placeholder,
-  .model-placeholder {
-    width: 150px;
-    height: 150px;
-  }
-}
-
-@media (max-width: 480px) {
-  .section-header h2 {
-    font-size: 2rem;
-  }
-
-  .converter-info h3 {
-    font-size: 1.8rem;
-  }
-
-  .feature-list li {
-    font-size: 1.3rem;
-  }
-
-  .image-placeholder,
-  .model-placeholder {
-    width: 130px;
-    height: 130px;
-  }
-
-  .image-placeholder i,
-  .model-placeholder i {
-    font-size: 3rem;
-  }
-
-  .cta-button {
-    padding: 1rem 2rem;
-    font-size: 1.4rem;
-  }
-}
 
 /* ========================
    Extended Utility Classes
@@ -1023,5 +744,287 @@ p {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+
+
+/* Ai section */
+/* ========================
+   AI Image Converter Section - Modern Design
+======================== */
+.ai-image-converter {
+  padding: 7rem 2rem;
+  text-align: center;
+  /* Using a slightly different shade from primary color */
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-image-converter::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: 0;
+}
+
+.converter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.converter-info {
+  flex: 1;
+  text-align: left;
+  padding: 2rem;
+}
+
+.converter-info h3 {
+  color: var(--secondary-color);
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  background: linear-gradient(45deg, #b927fc, #2c64fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 3rem;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  color: var(--accent-soft-color);
+  font-size: 1.5rem;
+}
+
+.feature-list li i {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: #b927fc;
+  min-width: 25px;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 2.5rem;
+  background: linear-gradient(45deg, #b927fc, #2c64fc);
+  color: white;
+  border-radius: 30px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 10px 20px rgba(44, 100, 252, 0.3);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(44, 100, 252, 0.4);
+}
+
+.cta-button span {
+  margin-right: 1rem;
+}
+
+.converter-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.conversion-illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.01)
+  );
+  backdrop-filter: blur(10px);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.image-side,
+.model-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-placeholder,
+.model-placeholder {
+  width: 180px;
+  height: 180px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.image-placeholder {
+  background: linear-gradient(145deg, #2a2a36, #1a1a24);
+  box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.model-placeholder {
+  background: linear-gradient(145deg, #2c64fc, #b927fc);
+  box-shadow: 0 8px 25px rgba(44, 100, 252, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.model-placeholder::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 45%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 55%
+  );
+  animation: shineEffect 3s infinite;
+}
+
+@keyframes shineEffect {
+  0% {
+    transform: translateX(-150%) translateY(-150%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(150%) translateY(150%) rotate(45deg);
+  }
+}
+
+.image-placeholder i,
+.model-placeholder i {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.image-placeholder span,
+.model-placeholder span {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.arrow-animation {
+  margin: 0 2rem;
+  font-size: 2.5rem;
+  color: #b927fc;
+  animation: pulseArrow 2s infinite;
+}
+
+@keyframes pulseArrow {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .converter-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .converter-info {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .feature-list li {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .ai-image-converter {
+    padding: 5rem 1.5rem;
+  }
+
+  .conversion-illustration {
+    padding: 2rem;
+    flex-direction: column;
+  }
+
+  .arrow-animation {
+    transform: rotate(90deg);
+    margin: 1.5rem 0;
+  }
+
+  .image-placeholder,
+  .model-placeholder {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .converter-info h3 {
+    font-size: 1.8rem;
+  }
+
+  .feature-list li {
+    font-size: 1.3rem;
+  }
+
+  .image-placeholder,
+  .model-placeholder {
+    width: 130px;
+    height: 130px;
+  }
+
+  .image-placeholder i,
+  .model-placeholder i {
+    font-size: 3rem;
+  }
+
+  .cta-button {
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
   }
 }
