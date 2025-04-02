@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,7 +41,7 @@
   <meta name="theme-color" content="#ffffff" />
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Onest:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
@@ -67,6 +68,12 @@
 
   <!-- Performance Optimizations -->
   <meta http-equiv="Cache-Control" content="max-age=31536000" />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <meta name="renderMode" content="concurrent">
+  <meta name="color-scheme" content="dark light">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -149,7 +156,7 @@
             using your phone
           </p>
           <a href="#" class="btn primary-btn gradient-hover">Start Creating</a>
-         
+
         </div>
         <div class="flex-item robot" data-aos="fade-up" data-aos-delay="200">
           <!-- 3D Robot Scene -->
@@ -219,7 +226,7 @@
         <p>
           Discover objects from various categories ready for AR exploration
         </p>
-      
+
       </div>
       <!-- Furniture Collection -->
       <div class="category-group" data-aos="fade-up" data-aos-delay="100">
@@ -227,7 +234,7 @@
         <div class="cards-grid">
           <div class="category-card" data-aos="fade-up" data-aos-delay="0">
             <div class="card-image furniture-1">
-              <img src="/1.jpg" alt="Modern Sofa">
+              <img src="/1.jpg" alt="Modern Sofa" loading="lazy">
             </div>
             <div class="card-content">
               <h4>Modern Sofa</h4>
@@ -239,7 +246,7 @@
           </div>
           <div class="category-card" data-aos="fade-up" data-aos-delay="0">
             <div class="card-image furniture-2">
-              <img src="/2.jpg" alt="Dining Set">
+              <img src="/2.jpg" alt="Dining Set" loading="lazy">
             </div>
             <div class="card-content">
               <h4>Dining Set</h4>
@@ -251,7 +258,7 @@
           </div>
           <div class="category-card" data-aos="fade-up" data-aos-delay="0">
             <div class="card-image furniture-3">
-              <img src="/3.jpg" alt="Bookshelf">
+              <img src="/3.jpg" alt="Bookshelf" loading="lazy">
             </div>
             <div class="card-content">
               <h4>Bookshelf</h4>
@@ -263,49 +270,49 @@
           </div>
         </div>
       </div>
-      
 
-    
-        
-        <!-- Medical Collection -->
-        <div class="category-group" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="category-title">Medical Models</h3>
-          <div class="cards-grid">
-            <div class="category-card" data-aos="fade-up" data-aos-delay="0">
-              <div class="card-image medical-1"></div>
-              <div class="card-content">
-                <h4>Human Anatomy</h4>
-                <p>
-                  Interactive 3D model of human muscular system with layer
-                  control functionality.
-                </p>
-                <a href="#" class="btn primary-btn">View in AR</a>
-              </div>
+
+
+
+      <!-- Medical Collection -->
+      <div class="category-group" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="category-title">Medical Models</h3>
+        <div class="cards-grid">
+          <div class="category-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="card-image medical-1"></div>
+            <div class="card-content">
+              <h4>Human Anatomy</h4>
+              <p>
+                Interactive 3D model of human muscular system with layer
+                control functionality.
+              </p>
+              <a href="#" class="btn primary-btn">View in AR</a>
             </div>
-            <div class="category-card" data-aos="fade-up" data-aos-delay="0">
-              <div class="card-image medical-2"></div>
-              <div class="card-content">
-                <h4>Surgical Tools</h4>
-                <p>
-                  Detailed models of medical instruments for training and
-                  demonstration purposes.
-                </p>
-                <a href="#" class="btn primary-btn">View in AR</a>
-              </div>
+          </div>
+          <div class="category-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="card-image medical-2"></div>
+            <div class="card-content">
+              <h4>Surgical Tools</h4>
+              <p>
+                Detailed models of medical instruments for training and
+                demonstration purposes.
+              </p>
+              <a href="#" class="btn primary-btn">View in AR</a>
             </div>
-            <div class="category-card" data-aos="fade-up" data-aos-delay="0">
-              <div class="card-image medical-3"></div>
-              <div class="card-content">
-                <h4>Organ Models</h4>
-                <p>
-                  Rotatable 3D heart model with cutaway views and blood flow
-                  visualization.
-                </p>
-                <a href="#" class="btn primary-btn">View in AR</a>
-              </div>
+          </div>
+          <div class="category-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="card-image medical-3"></div>
+            <div class="card-content">
+              <h4>Organ Models</h4>
+              <p>
+                Rotatable 3D heart model with cutaway views and blood flow
+                visualization.
+              </p>
+              <a href="#" class="btn primary-btn">View in AR</a>
             </div>
           </div>
         </div>
+      </div>
 
       <!-- Food Collection -->
       <div class="category-group" data-aos="fade-up" data-aos-delay="100">
@@ -411,7 +418,8 @@
 
 
 
-    <section class="ai-image-converter responsive-section" id="ai-image-converter"  data-aos="fade-up" data-aos-duration="800">
+    <section class="ai-image-converter responsive-section" id="ai-image-converter" data-aos="fade-up"
+      data-aos-duration="800">
       <div class="converter-wrapper">
         <div class="converter-content">
           <div class="converter-header">
@@ -718,19 +726,19 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script type="module" src="main.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script defer type="module" src="main.js"></script>
   <script>
     // Initialize AOS (Animate On Scroll)
-    document.addEventListener('DOMContentLoaded', function () {
-      AOS.init({
-        once: true,      // whether animation should happen only once
-        mirror: false,   // whether elements should animate out while scrolling past them
-        duration: 700    // default animation duration
+    document.addEventListener('DOMContentLoaded', () => {
+      requestIdleCallback(() => {
+        AOS.init({
+          once: true,      // whether animation should happen only once
+          mirror: false,   // whether elements should animate out while scrolling past them
+          duration: 700    // default animation duration
+        });
       });
     });
-
-
   </script>
 </body>
 
