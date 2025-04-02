@@ -549,8 +549,8 @@ p {
   max-width: 800px; /* Optional max-width constraint */
   height: auto; /* Maintain aspect ratio */
   margin-bottom: 0; /* Space from bottom */
-  width: 35rem !important;
-  height: 35rem !important;
+  /* width: 35rem !important;
+  height: 35rem !important; */
 }
 
 .gradient-divider {

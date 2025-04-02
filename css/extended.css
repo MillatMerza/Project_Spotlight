@@ -510,6 +510,7 @@ p {
   position: relative;
   z-index: 1;
   min-height: 100vh; /* Ensure footer sticks properly */
+      width: fit-content;
 }
 
 .footer {
@@ -536,8 +537,8 @@ p {
 }
 
 .footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1400px;
+  
   display: grid;
   grid-template-columns: 2fr 1fr 1fr; /* First column takes 2 parts, others take 1 part */
   gap: 3rem;
@@ -744,7 +745,8 @@ p {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}/* New AI Image Converter Section */
+}
+
 .ai-image-converter {
   padding: 8rem 0;
   position: relative;
@@ -753,6 +755,7 @@ p {
   max-width: 1400px; /* Match responsive-section max-width */
   margin: 0 auto;
   overflow: hidden; /* Prevent content from overflowing */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .converter-wrapper {
@@ -763,6 +766,8 @@ p {
   align-items: center;
   padding: 0 2rem; /* Add horizontal padding */
   box-sizing: border-box; /* Ensure padding is included in width calculation */
+  max-width: 1400px; /* Match parent container */
+  margin: 0 auto;
 }
 
 /* Content Side */
@@ -809,12 +814,27 @@ p {
   word-wrap: break-word; /* Allow long words to break */
 }
 
+/* CTA button styling */
+.converter-cta {
+  width: 100%;
+}
+
+.converter-cta .btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
 /* Visual Side */
 .converter-visuals {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 100%; /* Ensure it doesn't overflow its container */
+  width: 100%; /* Control width */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .conversion-demo {
@@ -866,6 +886,7 @@ p {
   justify-content: center;
   padding: 2rem;
   background-color: var(--card-backgroun);
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .image-card .card-content {
@@ -899,6 +920,8 @@ p {
   align-items: center;
   gap: 1rem;
   padding: 0 10px; /* Add some padding to prevent crowding */
+  flex-shrink: 0; /* Prevent this element from shrinking too much */
+  width: 60px; /* Fixed width to ensure consistent layout */
 }
 
 .process-arrow {
@@ -977,6 +1000,10 @@ p {
     max-width: 100%;
     margin: 0 auto;
   }
+  
+  .converter-visuals {
+    padding: 0 1rem; /* Add some padding */
+  }
 }
 
 @media (max-width: 768px) {
@@ -1004,6 +1031,11 @@ p {
   
   .conversion-demo {
     padding: 2rem;
+    max-width: 100%; /* Ensure it doesn't exceed container width */
+  }
+  
+  .conversion-process {
+    width: 50px; /* Slightly smaller on medium screens */
   }
 }
 
@@ -1011,12 +1043,14 @@ p {
   .conversion-demo {
     padding: 1.5rem;
     gap: 1rem; /* Reduce gap further for very small screens */
+    flex-wrap: nowrap; /* Prevent wrapping */
   }
 
   .image-card,
   .model-card {
     width: 120px; /* Make cards even smaller on very small screens */
     max-width: calc(50% - 10px);
+    flex-shrink: 0; /* Prevent cards from shrinking too much */
   }
 
   .card-content {
@@ -1039,8 +1073,9 @@ p {
   }
 
   .converter-visuals {
-    margin: 0; /* Remove negative margins */
-    transform: none; /* Remove scaling to prevent overflow */
+    padding: 0; /* Remove padding */
+    margin: 0 auto;
+    width: 100%;
   }
   
   .process-arrow {
@@ -1050,6 +1085,11 @@ p {
   .process-dots .dot {
     width: 8px;
     height: 8px;
+  }
+  
+  .conversion-process {
+    width: 40px; /* Even smaller on small screens */
+    padding: 0 5px;
   }
 }
 
@@ -1067,14 +1107,20 @@ p {
   .image-card,
   .model-card {
     width: 100px;
+    min-width: 0; /* Allow further shrinking if needed */
   }
   
   .card-content {
     height: 100px;
+    padding: 1rem 0.25rem; /* Reduce padding further */
   }
   
   .converter-header h2 {
     font-size: 2rem;
+  }
+  
+  .conversion-process {
+    width: 30px; /* Minimal width on very small screens */
   }
 }
 /* ========================
