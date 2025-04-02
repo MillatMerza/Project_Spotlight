@@ -242,7 +242,7 @@ p {
 .form-group textarea {
   width: 100%;
   padding: 1.2rem 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.03);
   color: var(--secondary-color);
@@ -745,7 +745,6 @@ p {
     scroll-behavior: auto !important;
   }
 }
-
 /* New AI Image Converter Section */
 .ai-image-converter {
   padding: 8rem 0;
@@ -754,6 +753,7 @@ p {
   width: 100%;
   max-width: 1400px; /* Match responsive-section max-width */
   margin: 0 auto;
+  overflow: hidden; /* Prevent content from overflowing */
 }
 
 .converter-wrapper {
@@ -762,6 +762,8 @@ p {
   grid-template-columns: 1fr 1fr;
   gap: 6rem;
   align-items: center;
+  padding: 0 2rem; /* Add horizontal padding */
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
 }
 
 /* Content Side */
@@ -796,21 +798,16 @@ p {
   margin-bottom: 2rem;
   font-weight: 700;
   letter-spacing: -0.02em;
+  word-wrap: break-word; /* Allow long words to break */
 }
 
 .converter-header .description {
   font-size: 1.6rem;
   color: var(--accent-color);
   line-height: 1.7;
-  max-width: 90%;
   width: 100%;
-  max-width: 100%;
   margin: 0;
-}
-
-/* Removed primary-btn styling as requested */
-.converter-cta {
-  margin-top: 1rem;
+  word-wrap: break-word; /* Allow long words to break */
 }
 
 /* Visual Side */
@@ -818,6 +815,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 100%; /* Ensure it doesn't overflow its container */
 }
 
 .conversion-demo {
@@ -832,11 +830,13 @@ p {
   padding: 3rem;
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .image-card,
 .model-card {
   width: 180px;
+  max-width: calc(50% - 20px); /* Ensure cards don't cause overflow */
   border-radius: 12px;
   overflow: hidden;
   background: var(--card-backgroun);
@@ -890,6 +890,8 @@ p {
   font-size: 1.6rem;
   color: var(--secondary-color);
   font-weight: 500;
+  text-align: center;
+  word-break: break-word; /* Prevent text overflow */
 }
 
 .conversion-process {
@@ -897,6 +899,7 @@ p {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  padding: 0 10px; /* Add some padding to prevent crowding */
 }
 
 .process-arrow {
@@ -999,83 +1002,82 @@ p {
     height: 160px;
     padding: 1.5rem;
   }
+  
+  .conversion-demo {
+    padding: 2rem;
+  }
 }
 
 @media (max-width: 576px) {
   .conversion-demo {
-    padding: 2rem;
-    /* Keep horizontal layout by removing flex-direction change */
-    gap: 1.5rem; /* Reduce gap slightly for mobile */
+    padding: 1.5rem;
+    gap: 1rem; /* Reduce gap further for very small screens */
   }
 
   .image-card,
   .model-card {
-    width: 140px; /* Keep cards slightly smaller on mobile */
+    width: 120px; /* Make cards even smaller on very small screens */
+    max-width: calc(50% - 10px);
   }
 
   .card-content {
-    height: 140px;
-  }
-
-  /* Keep process indicators horizontal */
-  .conversion-process {
-    gap: 1rem;
-  }
-
-  /* Remove vertical transforms */
-  .process-arrow {
-    transform: none;
-  }
-
-  .process-dots {
-    flex-direction: row;
-  }
-
-  /* Keep horizontal animation */
-  @keyframes arrowPulse {
-    0% {
-      transform: translateX(0);
-      opacity: 0.7;
-    }
-    50% {
-      transform: translateX(5px);
-      opacity: 1;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 0.7;
-    }
-  }
-
-  .converter-visuals {
-    transform: scale(0.85);
-    margin: -2rem 0; /* Compensate for the extra space caused by scaling */
-  }
-
-  .conversion-demo {
-    padding: 1.5rem; /* Reduce padding to make it more compact */
-  }
-
-  .image-card,
-  .model-card {
-    width: 130px; /* Further reduce card width for mobile */
-  }
-
-  .card-content {
-    height: 130px; /* Adjust height to maintain aspect ratio */
-    padding: 1rem; /* Reduce padding inside cards */
+    height: 120px;
+    padding: 1rem 0.5rem;
   }
 
   .card-content i {
-    font-size: 3rem; /* Slightly smaller icons */
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .card-content span {
-    font-size: 1.2rem; /* Smaller text */
+    font-size: 1rem;
+  }
+  
+  .card-header {
+    padding: 0.7rem;
+    font-size: 1.2rem;
+  }
+
+  .converter-visuals {
+    margin: 0; /* Remove negative margins */
+    transform: none; /* Remove scaling to prevent overflow */
+  }
+  
+  .process-arrow {
+    font-size: 1.2rem;
+  }
+  
+  .process-dots .dot {
+    width: 8px;
+    height: 8px;
   }
 }
 
+/* Extra small screens */
+@media (max-width: 375px) {
+  .ai-image-converter {
+    padding: 4rem 1rem;
+  }
+  
+  .conversion-demo {
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+  
+  .image-card,
+  .model-card {
+    width: 100px;
+  }
+  
+  .card-content {
+    height: 100px;
+  }
+  
+  .converter-header h2 {
+    font-size: 2rem;
+  }
+}
 /* ========================
    Spotlight FAQ Section - Modern Design
 ======================== */
