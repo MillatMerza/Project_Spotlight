@@ -242,7 +242,7 @@ p {
 .form-group textarea {
   width: 100%;
   padding: 1.2rem 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(152, 141, 141, 0.9);
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.03);
   color: var(--secondary-color);
@@ -510,7 +510,6 @@ p {
   position: relative;
   z-index: 1;
   min-height: 100vh; /* Ensure footer sticks properly */
-  
 }
 
 .footer {
@@ -538,7 +537,7 @@ p {
 
 .footer-container {
   max-width: 1400px;
-  
+
   display: grid;
   grid-template-columns: 2fr 1fr 1fr; /* First column takes 2 parts, others take 1 part */
   gap: 3rem;
@@ -997,11 +996,11 @@ p {
     max-width: 100%;
     margin: 0 auto;
   }
-  
+
   .converter-cta {
     justify-content: center;
   }
-  
+
   .converter-cta .btn {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -1031,13 +1030,13 @@ p {
     height: 160px;
     padding: 1.5rem;
   }
-  
+
   .conversion-demo {
     padding: 2rem;
     max-width: 100%; /* Ensure it doesn't exceed container width */
     margin: 0 auto;
   }
-  
+
   .conversion-process {
     width: 50px; /* Slightly smaller on medium screens */
   }
@@ -1080,7 +1079,7 @@ p {
   .card-content span {
     font-size: 1rem;
   }
-  
+
   .card-header {
     padding: 0.7rem;
     font-size: 1.2rem;
@@ -1091,16 +1090,16 @@ p {
     margin: 0 auto;
     width: 100%;
   }
-  
+
   .process-arrow {
     font-size: 1.2rem;
   }
-  
+
   .process-dots .dot {
     width: 8px;
     height: 8px;
   }
-  
+
   .conversion-process {
     width: 40px; /* Even smaller on small screens */
     padding: 0 5px;
@@ -1112,27 +1111,27 @@ p {
   .ai-image-converter {
     padding: 4rem 1rem;
   }
-  
+
   .conversion-demo {
     padding: 1rem;
     gap: 0.5rem;
   }
-  
+
   .image-card,
   .model-card {
     width: 100px;
     min-width: 0; /* Allow further shrinking if needed */
   }
-  
+
   .card-content {
     height: 100px;
     padding: 1rem 0.25rem; /* Reduce padding further */
   }
-  
+
   .converter-header h2 {
     font-size: 2rem;
   }
-  
+
   .conversion-process {
     width: 30px; /* Minimal width on very small screens */
   }
@@ -1143,11 +1142,11 @@ p {
   .converter-header h2 {
     font-size: 3.8rem;
   }
-  
+
   .converter-header .subtitle {
     font-size: 1.8rem;
   }
-  
+
   .converter-header .description {
     font-size: 1.8rem;
   }
@@ -1230,7 +1229,6 @@ p {
 .faq-item {
   background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 16px;
   padding: 0;
   cursor: pointer;
@@ -1305,9 +1303,7 @@ p {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.faq-item.active .question h3 {
-  color: var(--accent-color);
-}
+
 
 .faq-item.active .arrow {
   transform: rotate(90deg);
@@ -1743,8 +1739,6 @@ p {
 }
 /* these is just for sidad we use image in html only */
 
-
-
 .furniture-3 {
   background-color: #2ecc71; /* A vibrant green */
 }
@@ -1831,8 +1825,6 @@ p {
   }
 }
 
-
-
 @media (max-width: 768px) {
   .category-title {
     font-size: 2.2rem;
@@ -1857,8 +1849,6 @@ p {
   }
 }
 
-
-
 /* ========================
    Explore More Section - Modern Design
   */
@@ -1875,25 +1865,33 @@ p {
 }
 
 .explore-more-container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(220, 220, 220, 0.04) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(220, 220, 220, 0.04) 0%,
+    transparent 70%
+  );
   z-index: 0;
   animation: pulse 18s infinite linear;
 }
 
 .explore-more-container::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   right: 0;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(220, 220, 220, 0.06) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(220, 220, 220, 0.06) 0%,
+    transparent 70%
+  );
   z-index: 0;
 }
 
@@ -1937,13 +1935,13 @@ p {
 }
 
 .explore-more-content h3::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -8px;
   left: 0;
   width: 80px;
   height: 4px;
-  background: #555555; /* Changed from blue */
+  background: linear-gradient(to right, #b927fc 0%, #2c64fc 100%);
   border-radius: 4px;
 }
 
@@ -1967,9 +1965,9 @@ p {
   align-items: center;
   justify-content: center;
   padding: 1.6rem 3.4rem;
-  background: linear-gradient(45deg, #b927fc, #2c64fc); /* Kept original gradient */
-  color: var(--primary-color);
-  border-radius: 50px;
+
+  color: var(--secondary-color);
+  border-radius: 12px;
   font-size: 1.7rem;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -1983,13 +1981,18 @@ p {
 }
 
 .explore-more-btn::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transform: translateX(-100%);
 }
 
@@ -2041,7 +2044,8 @@ p {
 }
 
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -2051,7 +2055,11 @@ p {
 
 /* Dark mode adaptations */
 .dark-mode .explore-more-container {
-  background: linear-gradient(145deg, rgba(50, 50, 50, 0.12), rgba(30, 30, 30, 0.12));
+  background: linear-gradient(
+    145deg,
+    rgba(50, 50, 50, 0.12),
+    rgba(30, 30, 30, 0.12)
+  );
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
@@ -2073,40 +2081,40 @@ p {
     padding: 4rem 2.5rem;
     margin-top: 6rem;
   }
-  
+
   .explore-more-content {
     flex-direction: column;
     text-align: center;
     gap: 2.5rem;
   }
-  
+
   .explore-more-text {
     text-align: center;
     padding-right: 0;
     margin-bottom: 1rem;
     flex: 1 1 100%;
   }
-  
+
   .explore-more-content h3 {
     font-size: 2.6rem;
   }
-  
+
   .explore-more-content h3::after {
     left: 50%;
     transform: translateX(-50%);
     width: 60px;
   }
-  
+
   .explore-more-content p {
     font-size: 1.5rem;
     margin: 2rem auto 0;
   }
-  
+
   .explore-more-button-wrapper {
     justify-content: center;
     width: 100%;
   }
-  
+
   .explore-more-btn {
     width: 100%;
     max-width: 300px;
@@ -2119,9 +2127,8 @@ p {
     padding: 3.5rem 2rem;
     margin-top: 5rem;
   }
-  
+
   .explore-more-content h3 {
     font-size: 2.3rem;
   }
 }
-

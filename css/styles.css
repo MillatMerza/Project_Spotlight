@@ -329,13 +329,13 @@ p {
   margin: 1rem;
   display: inline-block;
   text-decoration: none;
-  padding: 0.9em 1.6em;
+  padding: 0.6em 1.6em;
   border: none;
   outline: none;
   color: var(--primary-color);
   font-family: inherit;
   font-weight: 500;
-  font-size: 17px;
+  font-size: 1.8rem;
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -580,6 +580,7 @@ p {
 }
 /* Improved Theme Checkbox Styling */
 .theme-checkbox {
+  
   --toggle-size: 3.4rem;
   --transition-speed: 0.4s;
 
