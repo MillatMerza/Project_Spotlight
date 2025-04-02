@@ -744,8 +744,7 @@ p {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-/* New AI Image Converter Section */
+}/* New AI Image Converter Section */
 .ai-image-converter {
   padding: 8rem 0;
   position: relative;
