@@ -1,51 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <!-- Primary Meta Tags -->
   <title>Spotlight | Transform 3D Models into Interactive AR Experiences</title>
   <meta name="description"
-    content="Spotlight converts your 3D models into augmented reality experiences. Visualize products in real-world environments using AR technology. Perfect for designers, marketers, and educators." />
+    content="Spotlight transforms your 3D models into immersive augmented reality experiences. Visualize products in real-world environments with our cutting-edge AR technology. Ideal for designers, marketers, and educators." />
   <meta name="author" content="Spotlight AR Technologies" />
   <meta name="keywords"
-    content="Augmented Reality, 3D Modeling, AR Visualization, Interactive 3D, AR Technology, Product Visualization, AR Platform" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    content="Augmented Reality, 3D Modeling, AR Visualization, Interactive 3D, AR Technology, Product Visualization, AR Platform, 3D Rendering, Mixed Reality, Virtual Showroom" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+  <link rel="manifest" href="./site.webmanifest" />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourspotlightdomain.com/" />
+  <meta property="og:title" content="Spotlight | Transform 3D Models into Interactive AR Experiences" />
+  <meta property="og:description"
+    content="Visualize products in real-world environments with our cutting-edge AR technology." />
+  <meta property="og:image" content="https://yourspotlightdomain.com/images/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://yourspotlightdomain.com/" />
+  <meta property="twitter:title" content="Spotlight | Transform 3D Models into Interactive AR Experiences" />
+  <meta property="twitter:description"
+    content="Visualize products in real-world environments with our cutting-edge AR technology." />
+  <meta property="twitter:image" content="https://yourspotlightdomain.com/images/twitter-image.jpg" />
 
   <!-- Mobile Web App Capabilities -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#ffffff" />
 
-  <!-- Fonts and Styles -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Onest:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Onest:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
 
-  <!-- Performance Optimizations -->
-  <meta http-equiv="Cache-Control" content="max-age=31536000">
-
   <!-- Preload Critical Assets -->
-  <link rel="preload" href="css/styles.css" as="style">
-  <link rel="preload" href="css/normalize.css" as="style">
-  <link rel="preload" href="js/main.js" as="script">
-  <link rel="preload" as="font" href="path-to-your-onest-font.woff2" type="font/woff2" crossorigin>
-  <link rel="preload" as="script" href="https://unpkg.com/@splinetool/runtime" crossorigin>
+  <!-- Using relative paths for Netlify compatibility -->
+  <link rel="preload" href="./css/normalize.css" as="style" />
+  <link rel="preload" href="./css/styles.css" as="style" />
+  <link rel="preload" href="./css/extended.css" as="style" />
+  <link rel="preload" href="./js/main.js" as="script" />
+  <link rel="preload" href="https://unpkg.com/@splinetool/runtime@latest/build/runtime.js" as="script" crossorigin />
 
-  <!-- AOS Animation Library -->
+  <!-- Styles in correct loading order -->
+  <!-- Load normalize first -->
+  <link rel="stylesheet" href="./css/normalize.css" />
+  <!-- Then your base styles -->
+  <link rel="stylesheet" href="./css/styles.css" />
+  <!-- Then extended/overriding styles -->
+  <link rel="stylesheet" href="./css/extended.css" />
+  <!-- Then third-party styles -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/css/normalize.css" />
-  <link rel="stylesheet" href="/css/styles.css" />
-  <link rel="stylesheet" href="/css/extended.css" />
+  <!-- Performance Optimizations -->
+  <meta http-equiv="Cache-Control" content="max-age=31536000" />
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Spotlight AR",
+      "applicationCategory": "Multimedia",
+      "operatingSystem": "Web, iOS, Android",
+      "description": "Transform 3D models into interactive AR experiences",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  </script>
 </head>
 
 <body>
@@ -191,7 +229,9 @@
         <h3 class="category-title">Furniture Collection</h3>
         <div class="cards-grid">
           <div class="category-card" data-aos="fade-up" data-aos-delay="0">
-            <div class="card-image furniture-1"></div>
+            <div class="card-image furniture-1">
+              <img src="/1.jpg" alt="sofa">
+            </div>
             <div class="card-content">
               <h4>Modern Sofa</h4>
               <p>
@@ -202,7 +242,9 @@
             </div>
           </div>
           <div class="category-card" data-aos="fade-up" data-aos-delay="0">
-            <div class="card-image furniture-2"></div>
+            <div class="card-image furniture-2">
+              <img src="/2.jpg" alt="sofa">
+            </div>
             <div class="card-content">
               <h4>Dining Set</h4>
               <p>
@@ -366,8 +408,32 @@
           </div>
         </div>
       </div>
+
+
+      <!-- Add this right after the last category-group div, but before the closing section tag -->
+      <div class="explore-more-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="explore-more-content">
+          <div class="explore-more-text">
+            <h3>Discover Our Complete Collection</h3>
+            <p> Your world, your rules. Pop a dinosaur in your kitchen, park a supercar in your hallway—if you can
+              imagine it, our AR
+              can render it</p>
+          </div>
+          <div class="explore-more-button-wrapper">
+            <a href="/more-models" class="explore-more-btn">
+              <span class="btn-text">Explore Full Gallery</span>
+              <span class="btn-icon">
+                <i class="fas fa-cube"></i>
+                <i class="fas fa-arrow-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
-    <!-- new add -->
+
+
+
     <section class="ai-image-converter responsive-section" id="ai-image-converter">
       <div class="converter-wrapper">
         <div class="converter-content">
@@ -582,7 +648,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path
-                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
                     </path>
                   </svg>
                 </div>
