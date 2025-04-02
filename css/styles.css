@@ -532,7 +532,7 @@ p {
   width: 100%;
   height: auto;
   aspect-ratio: 750 / 500; /* Explicit ratio declaration */
-  max-width: 750px; /* Matches your natural width */
+  max-width: 730px; /* Matches your natural width */
   margin: 0 auto; /* Horizontal centering */
   display: block; /* Ensure proper block behavior */
   object-fit: contain; /* Prevent distortion */
