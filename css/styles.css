@@ -549,7 +549,10 @@ p {
   max-width: 800px; /* Optional max-width constraint */
   height: auto; /* Maintain aspect ratio */
   margin-bottom: 0; /* Space from bottom */
+  width: 35rem !important;
+  height: 35rem !important;
 }
+
 .gradient-divider {
   padding: 2.5rem 0 0;
   text-align: center;
@@ -579,29 +582,29 @@ p {
 .theme-checkbox {
   --toggle-size: 3.4rem;
   --transition-speed: 0.4s;
-  
+
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  
+
   width: var(--toggle-size);
   height: var(--toggle-size);
   border-radius: 50%;
-  
+
   position: relative;
   cursor: pointer;
-  
+
   background-color: #fff;
-  box-shadow: 0 0 0 2px rgba(241, 228, 228, 0.5), 
-              0 4px 15px rgba(0, 0, 0, 0.3),
-              inset 0 0 15px rgba(255, 255, 255, 0.05);
-  
-  transition: all var(--transition-speed) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 0 0 2px rgba(241, 228, 228, 0.5), 0 4px 15px rgba(0, 0, 0, 0.3),
+    inset 0 0 15px rgba(255, 255, 255, 0.05);
+
+  transition: all var(--transition-speed)
+    cubic-bezier(0.175, 0.885, 0.32, 1.275);
   margin: 10px;
   border: none;
   outline: none;
   overflow: hidden;
-  
+
   /* Fix for potential display issues */
   display: block;
   z-index: 10;
@@ -609,8 +612,7 @@ p {
 
 /* Accessibility - focus state */
 .theme-checkbox:focus-visible {
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.5), 
-              0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.5), 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Moon icon */
@@ -626,7 +628,8 @@ p {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  transition: transform var(--transition-speed) cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: transform var(--transition-speed)
+    cubic-bezier(0.68, -0.55, 0.27, 1.55);
   opacity: 1;
 }
 
@@ -643,7 +646,8 @@ p {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  transition: transform var(--transition-speed) cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: transform var(--transition-speed)
+    cubic-bezier(0.68, -0.55, 0.27, 1.55);
   transition-delay: 0.1s;
   opacity: 0;
 }
@@ -651,10 +655,9 @@ p {
 /* Checked state styles - dark background */
 .theme-checkbox:checked {
   background-color: #121212;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 
-              0 0 30px 5px rgba(0, 0, 0, 0.3),
-              inset 0 0 15px rgba(255, 255, 255, 0.05),
-              inset 0 0 3px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 30px 5px rgba(0, 0, 0, 0.3),
+    inset 0 0 15px rgba(255, 255, 255, 0.05),
+    inset 0 0 3px rgba(255, 255, 255, 0.2);
 }
 
 .theme-checkbox:checked::before {
@@ -670,17 +673,15 @@ p {
 /* Improved hover effects */
 .theme-checkbox:hover {
   transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15), 
-              0 0 50px 10px rgba(0, 0, 0, 0.1),
-              inset 0 -2px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15), 0 0 50px 10px rgba(0, 0, 0, 0.1),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .theme-checkbox:checked:hover {
   transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6), 
-              0 0 50px 10px rgba(0, 0, 0, 0.35),
-              inset 0 0 20px rgba(255, 255, 255, 0.07),
-              inset 0 0 5px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6), 0 0 50px 10px rgba(0, 0, 0, 0.35),
+    inset 0 0 20px rgba(255, 255, 255, 0.07),
+    inset 0 0 5px rgba(255, 255, 255, 0.2);
 }
 
 /* Active state for better feedback */
@@ -710,6 +711,3 @@ p {
 .theme-checkbox:checked::after {
   animation: ripple 0.6s ease-out;
 }
-
-
-
