@@ -1303,8 +1303,6 @@ p {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-
-
 .faq-item.active .arrow {
   transform: rotate(90deg);
   background: rgba(var(--accent-color-rgb), 0.1);
@@ -1659,7 +1657,7 @@ p {
   line-height: 1.6;
   margin: 0;
   flex: 1;
-  text-align: center;   
+  text-align: center;
 }
 
 .card-footer {
@@ -1739,8 +1737,6 @@ p {
   }
 }
 /* these is just for sidad we use image in html only */
-
-
 
 .medical-1 {
   background-color: #9b59b6; /* A deep purple */
@@ -1830,7 +1826,7 @@ p {
     margin-bottom: 2rem;
     padding-left: 1rem;
   }
-/* 
+  /* 
   .cards-grid {
     grid-template-columns: 1fr;
     padding: 0 1rem;
@@ -1847,7 +1843,6 @@ p {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
 /* ========================
    Explore More Section - Modern Design
   */
@@ -1861,6 +1856,8 @@ p {
   border-radius: 24px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(8px);
+  margin: 0 auto; /* Center the container */
+  width: 100%; /* Ensure it takes full width of parent */
 }
 
 .explore-more-container::before {
@@ -1914,17 +1911,18 @@ p {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 3rem;
+  width: 100%;
 }
 
 .explore-more-text {
   flex: 1;
   text-align: left;
-  min-width: 300px;
+  min-width: 280px; /* Reduced from 300px */
   max-width: 60%;
 }
 
 .explore-more-content h3 {
-  font-size: 3.2rem;
+  font-size: clamp(2.2rem, 5vw, 3.2rem); /* Responsive font size */
   color: var(--secondary-color);
   margin-bottom: 1.5rem;
   font-weight: 800;
@@ -1945,8 +1943,8 @@ p {
 }
 
 .explore-more-content p {
-  font-size: 1.7rem;
-  color: var(--accent-soft-color); /* Using your theme variable */
+  font-size: clamp(1.4rem, 3vw, 1.7rem); /* Responsive font size */
+  color: var(--accent-soft-color);
   line-height: 1.6;
   margin: 2rem 0 0;
   max-width: 500px;
@@ -1963,16 +1961,15 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1.6rem 3.4rem;
-
+  padding: clamp(1.2rem, 3vw, 1.6rem) clamp(2rem, 5vw, 3.4rem); /* Responsive padding */
   color: var(--secondary-color);
   border-radius: 12px;
-  font-size: 1.7rem;
+  font-size: clamp(1.4rem, 3vw, 1.7rem); /* Responsive font size */
   font-weight: 600;
   letter-spacing: 0.5px;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   text-decoration: none;
-  box-shadow: 0 10px 25px rgba(185, 39, 252, 0.3); /* Kept original shadow */
+  box-shadow: 0 10px 25px rgba(185, 39, 252, 0.3);
   position: relative;
   overflow: hidden;
   white-space: nowrap;
@@ -1997,13 +1994,13 @@ p {
 
 .explore-more-btn:hover {
   transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 15px 30px rgba(185, 39, 252, 0.35); /* Kept original shadow */
+  box-shadow: 0 15px 30px rgba(185, 39, 252, 0.35);
   border-color: rgba(255, 255, 255, 0.2);
 }
 
 .explore-more-btn:active {
   transform: translateY(-2px);
-  box-shadow: 0 8px 15px rgba(185, 39, 252, 0.25); /* Kept original shadow */
+  box-shadow: 0 8px 15px rgba(185, 39, 252, 0.25);
 }
 
 .explore-more-btn:hover::before {
@@ -2064,21 +2061,34 @@ p {
 }
 
 .dark-mode .explore-more-btn {
-  color: #fff; /* Always white text on gradient button in dark mode */
-  box-shadow: 0 10px 25px rgba(185, 39, 252, 0.4); /* Kept original shadow */
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(185, 39, 252, 0.4);
 }
 
-/* Mobile Responsiveness */
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 1200px) {
+  .explore-more-container {
+    padding: 4.5rem 3.5rem;
+  }
+}
+
 @media (max-width: 992px) {
+  .explore-more-container {
+    padding: 4rem 3rem;
+  }
+
   .explore-more-text {
     max-width: 100%;
+    min-width: 100%;
   }
 }
 
 @media (max-width: 768px) {
   .explore-more-container {
-    padding: 4rem 2.5rem;
-    margin-top: 6rem;
+    padding: 3.5rem 2.5rem;
+    margin: 0 1rem;
+    width: calc(100% - 2rem);
+    border-radius: 20px;
   }
 
   .explore-more-content {
@@ -2090,12 +2100,13 @@ p {
   .explore-more-text {
     text-align: center;
     padding-right: 0;
-    margin-bottom: 1rem;
-    flex: 1 1 100%;
+    margin-bottom: 0;
   }
 
   .explore-more-content h3 {
     font-size: 2.6rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .explore-more-content h3::after {
@@ -2105,8 +2116,8 @@ p {
   }
 
   .explore-more-content p {
-    font-size: 1.5rem;
     margin: 2rem auto 0;
+    max-width: 100%;
   }
 
   .explore-more-button-wrapper {
@@ -2117,17 +2128,56 @@ p {
   .explore-more-btn {
     width: 100%;
     max-width: 300px;
-    padding: 1.4rem 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .explore-more-container {
+    padding: 3rem 2rem;
+    border-radius: 16px;
+  }
+
+  .explore-more-container::after {
+    width: 200px;
+    height: 200px;
   }
 }
 
 @media (max-width: 480px) {
   .explore-more-container {
-    padding: 3.5rem 2rem;
-    margin-top: 5rem;
+    padding: 2.5rem 1.5rem;
+    margin: 0 0.5rem;
+    width: calc(100% - 1rem);
   }
 
   .explore-more-content h3 {
-    font-size: 2.3rem;
+    font-size: 2.2rem;
+  }
+
+  .explore-more-content p {
+    font-size: 1.4rem;
+  }
+
+  .explore-more-btn {
+    padding: 1.2rem 2rem;
+    font-size: 1.4rem;
+  }
+
+  .btn-icon {
+    margin-left: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .explore-more-container {
+    padding: 2rem 1.2rem;
+  }
+
+  .explore-more-content {
+    gap: 2rem;
+  }
+
+  .explore-more-content h3 {
+    font-size: 2rem;
   }
 }
