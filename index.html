@@ -4,94 +4,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- 
-
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <!-- Primary Meta Tags -->
   <title>Spotlight | Transform 3D Models into Interactive AR Experiences</title>
   <meta name="description"
-    content="Spotlight transforms your 3D models into immersive augmented reality experiences. Visualize products in real-world environments with our cutting-edge AR technology. Ideal for designers, marketers, and educators." />
+    content="Spotlight converts your 3D models into augmented reality experiences. Visualize products in real-world environments using AR technology. Perfect for designers, marketers, and educators." />
   <meta name="author" content="Spotlight AR Technologies" />
   <meta name="keywords"
-    content="Augmented Reality, 3D Modeling, AR Visualization, Interactive 3D, AR Technology, Product Visualization, AR Platform, 3D Rendering, Mixed Reality, Virtual Showroom" />
-
-  <!-- Favicon -->
-  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
-  <link rel="manifest" href="./site.webmanifest" />
-
-  <!-- Open Graph / Social Media -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourspotlightdomain.com/" />
-  <meta property="og:title" content="Spotlight | Transform 3D Models into Interactive AR Experiences" />
-  <meta property="og:description"
-    content="Visualize products in real-world environments with our cutting-edge AR technology." />
-  <meta property="og:image" content="https://yourspotlightdomain.com/images/og-image.jpg" />
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://yourspotlightdomain.com/" />
-  <meta property="twitter:title" content="Spotlight | Transform 3D Models into Interactive AR Experiences" />
-  <meta property="twitter:description"
-    content="Visualize products in real-world environments with our cutting-edge AR technology." />
-  <meta property="twitter:image" content="https://yourspotlightdomain.com/images/twitter-image.jpg" />
+    content="Augmented Reality, 3D Modeling, AR Visualization, Interactive 3D, AR Technology, Product Visualization, AR Platform" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
   <!-- Mobile Web App Capabilities -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="theme-color" content="#ffffff" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <!-- Fonts and Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Onest:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Onest:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
     rel="stylesheet" />
 
-  <!-- Preload Critical Assets -->
-  <!-- Using relative paths for Netlify compatibility -->
-  <link rel="preload" href="./css/normalize.css" as="style" />
-  <link rel="preload" href="./css/styles.css" as="style" />
-  <link rel="preload" href="./css/extended.css" as="style" />
-  <link rel="preload" href="https://unpkg.com/@splinetool/runtime@latest/build/runtime.js" as="script" crossorigin />
-
-  <!-- Styles in correct loading order -->
-  <!-- Load normalize first -->
-  <link rel="stylesheet" href="./css/normalize.css" />
-  <!-- Then your base styles -->
-  <link rel="stylesheet" href="./css/styles.css" />
-  <!-- Then extended/overriding styles -->
-  <link rel="stylesheet" href="./css/extended.css" />
-  <!-- Then third-party styles -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
   <!-- Performance Optimizations -->
-  <meta http-equiv="Cache-Control" content="max-age=31536000" />
-  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="dns-prefetch" href="https://unpkg.com">
-  <link rel="preconnect" href="https://unpkg.com" crossorigin>
-  <meta name="renderMode" content="concurrent">
-  <meta name="color-scheme" content="dark light">
+  <meta http-equiv="Cache-Control" content="max-age=31536000">
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Spotlight AR",
-      "applicationCategory": "Multimedia",
-      "operatingSystem": "Web, iOS, Android",
-      "description": "Transform 3D models into interactive AR experiences",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    }
-  </script>
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="preload" href="css/normalize.css" as="style">
+  <link rel="preload" href="js/main.js" as="script">
+  <link rel="preload" as="font" href="path-to-your-onest-font.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="script" href="https://unpkg.com/@splinetool/runtime" crossorigin>
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/normalize.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/extended.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
 
 <body>
